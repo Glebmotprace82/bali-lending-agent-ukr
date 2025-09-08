@@ -6,16 +6,36 @@
     <title>Ексклюзивний тур на Балі 10 днів/9 ночей - Презентація для Агентів</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
         }
-        .hero-bg {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://res.cloudinary.com/dsheo9ktv/video/upload/v1748181760/01_RiceTerrase_720p_djqmf8.mp4');
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+        #hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
             background-size: cover;
-            background-position: center;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.6);
+            z-index: -50;
         }
         .accordion-content {
             max-height: 0;
@@ -90,8 +110,13 @@
     </nav>
 
     <!-- Головний екран -->
-    <header class="hero-bg text-white pt-32 pb-20">
-        <div class="container mx-auto px-6 text-center">
+    <header class="hero-section text-white pt-32 pb-20">
+        <video autoplay loop muted playsinline id="hero-video" poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1748186226/Poster_RiseTrase_720p_fpvpt9.jpg">
+            <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1748181760/01_RiceTerrase_720p_djqmf8.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
             <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Відкрийте вашим клієнтам<br>справжній Балі</h1>
             <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Ексклюзивний авторський тур «Острів богів», 10 днів/9 ночей. Подорож, що поєднує глибоке занурення в культуру, розкішний відпочинок та яскраві враження.</p>
             <a href="#program" class="bg-white text-teal-500 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-transform transform hover:scale-105">Дивитися програму</a>
@@ -271,7 +296,7 @@
                         <div class="accordion-content px-5">
                             <p class="text-gray-700 mb-2"><strong>Прибуття та зустріч:</strong></p>
                             <ul class="list-disc list-inside text-gray-600 pl-4 mb-4 space-y-1">
-                                <li>Приліт в аеропорт Денпасар (DPS).</li>
+                                <li>✈️Приліт в аеропорт Денпасар (DPS).</li>
                                 <li>Оптимальний час прильоту (Emirates, Qatar Airways) - 16:30. <br>Інші рейси (Turkish, KLM) - близько 20:00.</li>
                                 <li>Індивідуальний трансфер під кожен рейс, без очікування інших учасників.</li>
                             </ul>
@@ -280,7 +305,7 @@
                              <p class="text-gray-700 mt-4"><strong>Готель:</strong> <a href="https://anandadara.com/" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline font-semibold">AnandaDara Ubud Resort & Spa</a></p>
                              <div class="mt-4 p-4 bg-teal-50 rounded-lg">
                                 <h4 class="font-bold text-teal-800">Родзинка дня</h4>
-                                <p class="text-sm text-teal-700 mt-2">✈️ День 1. Турбота з перших кроків<br>Як тільки гості виходять із зали прильоту - вже бачать нашу команду, яка зустрічає їх. Посмішка, табличка з ім'ями, допомога з багажем. Не важливо, прилетіли ви разом чи різними рейсами — у кожного буде свій комфортний трансфер.<br>💫 З перших хвилин туру ви відчуваєте: про вас піклуються.</p>
+                                <p class="text-sm text-teal-700 mt-2">Турбота з перших кроків<br>Як тільки гості виходять із зали прильоту - вже бачать нашу команду, яка зустрічає їх. Посмішка, табличка з ім'ями, допомога з багажем. Не важливо, прилетіли ви разом чи різними рейсами — у кожного буде свій комфортний трансфер.<br>💫 З перших хвилин туру ви відчуваєте: про вас піклуються.</p>
                             </div>
                             <div class="grid grid-cols-3 gap-2 my-4">
                                 <img src="https://placehold.co/400x300/e2e8f0/334155?text=Фото+Дня+1" alt="Фотографія туру" class="rounded-lg shadow-md">
@@ -435,14 +460,24 @@
                     <!-- День 6 -->
                     <div class="border rounded-lg shadow-sm overflow-hidden bg-white">
                         <button class="accordion-button w-full flex justify-between items-center text-left p-5 bg-gray-100 hover:bg-gray-200 transition">
-                            <span class="font-semibold text-lg">День 6: Ікони Балі та переїзд на південь</span>
+                            <span class="font-semibold text-lg">День 6: Нуса-Пеніда: блакитні лагуни та величні скелі</span>
                             <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
                         </button>
                         <div class="accordion-content px-5">
-                            <p class="mb-4 text-gray-700"><strong>На шостий день ми відвідаємо ворота Хандара, храм Улун Дану на озері Братан та покинутий готель Bedugul.</strong> Переїзд на південь острова та поселення в готель Ayodya Resort 5* в Нуса-Дуа.</p>
+                            <p class="mb-4 text-gray-700"><strong>САНУР</strong><br>Виїзд о 7:00<br>Ранній виїзд<strong><br><br>Сьогодні ми вирушаємо на сусідній острів — Нуса-Пеніду!</strong><br>На швидкісному катері ми за 30-40 хвилин дістанемося острова, де пересядемо на авто і вирушимо підкорювати знамениті локації:
+
+<br>💙 Angel’s Billabong — природний басейн-інфініті.
+<br>💔 Broken Beach — арка над океаном.
+<br>🦖 Kelingking Beach — скеля-динозавр.
+<br>💎 Crystal Bay — пляж із прозорою водою, де можна поплавати з маскою і побачити корали.</p>
                             <div class="mt-4 p-4 bg-teal-50 rounded-lg">
                                 <h4 class="font-bold text-teal-800">Родзинка дня</h4>
-                                <p class="text-sm text-teal-700 mt-2">Текст-заглушка для родзинки шостого дня.</p>
+                                <p class="text-sm text-teal-700 mt-2">💎 День 6. Баунті-острів Нуса-Пеніда
+
+<br>Усі фото звідси виглядають як реклама. Але ми робимо більше — ми показуємо не тільки топ-локації, а й приховані місця, де можна зробити фото без натовпу.
+
+<br>Ми знаємо, як спланувати маршрут, щоб уникнути заторів, і де знайти кафе з найкращим видом, а не з найвищими цінами.
+<br>💫 Це не просто поїздка за інста-фото, а комфортна подорож, де все продумано до дрібниць.</p>
                             </div>
                             <div class="grid grid-cols-3 gap-2 my-4">
                                 <img src="https://placehold.co/400x300/e2e8f0/334155?text=Фото+Дня+6" alt="Фотографія туру" class="rounded-lg shadow-md">
@@ -462,14 +497,25 @@
                     <!-- День 7 -->
                     <div class="border rounded-lg shadow-sm overflow-hidden bg-white">
                         <button class="accordion-button w-full flex justify-between items-center text-left p-5 bg-gray-100 hover:bg-gray-200 transition">
-                            <span class="font-semibold text-lg">День 7: Найкращі пляжі та вечеря в Джимбарані</span>
+                            <span class="font-semibold text-lg">День 7: Океан, пляжі та опції на вибір</span>
                             <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
                         </button>
                         <div class="accordion-content px-5">
-                            <p class="mb-4 text-gray-700"><strong>На сьомий день ми відвідаємо найкращі пляжі півдня: Padang-Padang, Green Bowl та Melasti.</strong> Вечеря з морепродуктів на березі океану в Джимбарані.</p>
+                            <p class="mb-4 text-gray-700"><strong>САНУР</strong><br>Вільний графік<strong><br><br>Цей день — для насолоди океаном і відпочинку.</strong>
+
+<br>Ви можете провести його на пляжі в Санурі або обрати додаткові активності:
+
+<br>🌊 Сплав на рафтингу по річці.
+<br>🐘 Поїздка в сафарі-парк або зоопарк.
+<br>🍳 Кулінарний клас, де вас навчать готувати балійські страви.
+<br>🛍️ Шопінг у Куті.</p>
                             <div class="mt-4 p-4 bg-teal-50 rounded-lg">
                                 <h4 class="font-bold text-teal-800">Родзинка дня</h4>
-                                <p class="text-sm text-teal-700 mt-2">Текст-заглушка для родзинки сьомого дня.</p>
+                                <p class="text-sm text-teal-700 mt-2">😎 День 7. Свобода вибору
+
+<br>Ми не заповнюємо програму вщент. Цей день — ваш. Хочете екстриму — рафтинг. Хочете екзотики — слони. Хочете релаксу — пляж.
+
+<br>💫 Наша мета — дати гостям відчуття свободи, адже найкращий відпочинок — це той, який відповідає вашому настрою.</p>
                             </div>
                             <div class="grid grid-cols-3 gap-2 my-4">
                                 <img src="https://placehold.co/400x300/e2e8f0/334155?text=Фото+Дня+7" alt="Фотографія туру" class="rounded-lg shadow-md">
@@ -489,14 +535,27 @@
                     <!-- День 8 -->
                     <div class="border rounded-lg shadow-sm overflow-hidden bg-white">
                         <button class="accordion-button w-full flex justify-between items-center text-left p-5 bg-gray-100 hover:bg-gray-200 transition">
-                            <span class="font-semibold text-lg">День 8: Вільний день для релаксу</span>
+                            <span class="font-semibold text-lg">День 8: Захід сонця в Улувату та танець Кечак</span>
                             <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
                         </button>
                         <div class="accordion-content px-5">
-                            <p class="mb-4 text-gray-700"><strong>Восьмий день — вільний час для насолоди океаном та послугами готелю Ayodya Resort.</strong> Релакс на пляжі, спа-процедури або самостійні прогулянки.</p>
+                            <p class="mb-4 text-gray-700"><strong>САНУР - НУСА ДУА</strong><br>Виїзд о 14:00<strong><br><br>Сьогодні ми переїжджаємо до Нуса-Дуа — елітного району з найкращими пляжами.</strong>
+
+<br>Дорогою ми відвідаємо:
+
+<br>🌊 Пляж, де тренуються серфери.
+<br>🌅 Храм Улувату на скелі, де зустрінемо захід сонця.
+<br>🔥 Подивимося традиційний танець Кечак.
+<br>🦞 Повечеряємо в рибному ресторані на пляжі Джимбаран.</p>
+                            <p class="text-gray-700 mt-4"><strong>Готель:</strong> <a href="https://merusaka.com/" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline font-semibold">MERUSAKA Nusa Dua</a></p>
                             <div class="mt-4 p-4 bg-teal-50 rounded-lg">
                                 <h4 class="font-bold text-teal-800">Родзинка дня</h4>
-                                <p class="text-sm text-teal-700 mt-2">Текст-заглушка для родзинки восьмого дня.</p>
+                                <p class="text-sm text-teal-700 mt-2">🌅 День 8. Захід сонця в Улувату — класика, яку ми робимо ідеальною
+
+<br>Ми знаємо найкращий час для приїзду, щоб уникнути натовпу, і найкращі місця для фото.
+
+<br>Поки інші туристи шукають місце, ви вже насолоджуєтеся виставою. А після танцю на вас чекає заздалегідь заброньований стіл у найкращому ресторані Джимбарану.
+<br>💫 Ми беремо класику і доводимо її до досконалості.</p>
                             </div>
                             <div class="grid grid-cols-3 gap-2 my-4">
                                 <img src="https://placehold.co/400x300/e2e8f0/334155?text=Фото+Дня+8" alt="Фотографія туру" class="rounded-lg shadow-md">
@@ -516,14 +575,22 @@
                     <!-- День 9 -->
                     <div class="border rounded-lg shadow-sm overflow-hidden bg-white">
                          <button class="accordion-button w-full flex justify-between items-center text-left p-5 bg-gray-100 hover:bg-gray-200 transition">
-                            <span class="font-semibold text-lg">День 9: Парк GWK та захід сонця в Улувату</span>
+                            <span class="font-semibold text-lg">День 9: Вільний день та фінальна вечеря</span>
                             <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
                         </button>
                         <div class="accordion-content px-5">
-                            <p class="mb-4 text-gray-700"><strong>На дев'ятий день ми відвідаємо парк GWK зі статуєю Гаруди, а ввечері поїдемо до храму Улувату, щоб насолодитися заходом сонця та подивитися традиційний танець Кечак.</strong></p>
+                            <p class="mb-4 text-gray-700"><strong>НУСА ДУА</strong><br>Вільний графік<strong><br><br>Останній повний день на Балі — для відпочинку.</strong>
+
+<br>Нікуди не поспішаємо, насолоджуємося океаном, басейном та послугами готелю.
+<br>Можна зайнятися шопінгом або просто релаксувати.
+
+<br>🥂 Ввечері на нас чекає фінальна вечеря, де ми поділимося враженнями та згадаємо найкращі моменти подорожі.</p>
                             <div class="mt-4 p-4 bg-teal-50 rounded-lg">
                                 <h4 class="font-bold text-teal-800">Родзинка дня</h4>
-                                <p class="text-sm text-teal-700 mt-2">Текст-заглушка для родзинки дев'ятого дня.</p>
+                                <p class="text-sm text-teal-700 mt-2">🥂 День 9. Атмосферне завершення
+
+<br>Фінальна вечеря — це не просто їжа, а можливість ще раз пережити всі емоції разом.
+<br>💫 Ми створюємо атмосферу, де кожен відчуває себе частиною однієї великої пригоди, яка назавжди залишиться в пам'яті.</p>
                             </div>
                             <div class="grid grid-cols-3 gap-2 my-4">
                                 <img src="https://placehold.co/400x300/e2e8f0/334155?text=Фото+Дня+9" alt="Фотографія туру" class="rounded-lg shadow-md">
@@ -547,10 +614,16 @@
                             <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
                         </button>
                         <div class="accordion-content px-5">
-                            <p class="mb-4 text-gray-700"><strong>Десятий день — вільний час, відпочинок, купівля сувенірів та трансфер в аеропорт відповідно до часу вильоту.</strong></p>
+                            <p class="mb-4 text-gray-700"><strong>НУСА ДУА</strong><br>Вільний графік<strong><br><br>Останній день туру ми проведемо в нашому готелі.</strong>
+
+<br>Ніжимося в океані, насолоджуємося всіма послугами.
+<br>Трансфери в аеропорт будуть організовані відповідно до вашого часу вильоту.</p>
                             <div class="mt-4 p-4 bg-teal-50 rounded-lg">
                                 <h4 class="font-bold text-teal-800">Родзинка дня</h4>
-                                <p class="text-sm text-teal-700 mt-2">Текст-заглушка для родзинки десятого дня.</p>
+                                <p class="text-sm text-teal-700 mt-2">✈️ День 10. Комфортне прощання
+
+<br>Ми не виселяємо гостей о 12:00. Ви можете насолоджуватися відпочинком до самого трансферу, незалежно від часу вильоту.
+<br>💫 Це остання нота турботи, яка залишає тепле відчуття і бажання повернутися.</p>
                             </div>
                             <div class="grid grid-cols-3 gap-2 my-4">
                                 <img src="https://placehold.co/400x300/e2e8f0/334155?text=Фото+Дня+10" alt="Фотографія туру" class="rounded-lg shadow-md">
@@ -833,6 +906,4 @@
     </script>
 </body>
 </html>
-" selected in the right-hand side of the screen. I will now respond to the user's query based on the selection.
-Змінюемо назву вкладкі 3 дня на: Світанок та сходження на вулкан Батур
 
