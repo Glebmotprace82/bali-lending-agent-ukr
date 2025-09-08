@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ексклюзивний тур на Балі 10 днів/9 ночей - Презентація для Агентів</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://placehold.co/1920x1080/000000/FFFFFF?text=Райський+Балі');
+            background-size: cover;
+            background-position: center;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+        }
+        .accordion-button.active + .accordion-content {
+            max-height: 1500px; /* Increased for more content */
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        .accordion-button .arrow {
+            transition: transform 0.3s ease-in-out;
+        }
+        .accordion-button.active .arrow {
+            transform: rotate(180deg);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #2dd4bf;
+            margin: 1rem auto 0;
+        }
+        /* Styles for tabs */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-button.active {
+            color: #2dd4bf;
+            border-bottom: 3px solid #2dd4bf;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Навігація -->
+    <nav id="navbar" class="bg-white/80 backdrop-blur-md fixed w-full top-0 z-50 shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 lg:px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-gray-800 flex-shrink-0">БАЛІ</a>
+                <div class="hidden md:flex items-center justify-between flex-grow ml-6 lg:ml-10 text-sm xl:text-base">
+                    <a href="#about" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Хто ми</a>
+                    <a href="#concept" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Концепція</a>
+                    <a href="#features" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Унікальність</a>
+                    <a href="#program" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Програма</a>
+                    <a href="#hotels" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Готелі</a>
+                    <a href="#sales" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Система продажів</a>
+                    <a href="#contact" class="bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition whitespace-nowrap">Стати партнером</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Мобільне меню -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                 <a href="#about" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Хто ми</a>
+                <a href="#concept" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Концепція</a>
+                <a href="#features" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Унікальність</a>
+                <a href="#program" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Програма</a>
+                <a href="#hotels" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Готелі</a>
+                <a href="#sales" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Система продажів</a>
+                <a href="#contact" class="block mt-2 text-center bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition">Стати партнером</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Головний екран -->
+    <header class="hero-bg text-white pt-32 pb-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Відкрийте вашим клієнтам<br>справжній Балі</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Ексклюзивний авторський тур «Острів богів», 10 днів/9 ночей. Подорож, що поєднує глибоке занурення в культуру, розкішний відпочинок та яскраві враження.</p>
+            <a href="#program" class="bg-white text-teal-500 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-transform transform hover:scale-105">Дивитися програму</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Про нас -->
+        <section id="about" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">Хто ми?</h2>
+                <div id="tabs-section" class="max-w-5xl mx-auto">
+                    <!-- Tab Buttons -->
+                    <div class="flex justify-center border-b border-gray-200 -mb-px">
+                        <button class="tab-button active py-3 px-5 font-semibold text-gray-800 transition" data-tab="who-we-are">Хто ми</button>
+                        <button class="tab-button py-3 px-5 font-semibold text-gray-500 hover:text-gray-800 transition" data-tab="founder">Про засновника</button>
+                        <button class="tab-button py-3 px-5 font-semibold text-gray-500 hover:text-gray-800 transition" data-tab="team">Команда та досвід</button>
+                    </div>
+                    <!-- Tab Content -->
+                    <div id="tab-content-container" class="pt-8 text-gray-700 leading-relaxed">
+                        <div id="who-we-are" class="tab-content active">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-800">Ліцензована туристична компанія з багаторічним досвідом</h3>
+                            <p class="mb-4"><strong>Turdan Inter — туристична компанія, заснована у 2018 році на Балі.</strong> Ми є приймаючою стороною (DMC) і спеціалізуємося на організації авторських групових і індивідуальних турів на Балі та інші острови Індонезії.
+Ми працюємо для різних ринків — українського, європейського та інших міжнародних. Єдиний виняток — <strong>ми принципово не працюємо з країною-окупантом і не маємо жодних стосунків із її туристичними компаніями чи клієнтами.</strong></p>
+                        </div>
+                        <div id="founder" class="tab-content">
+                             <h3 class="text-2xl font-semibold mb-4 text-gray-800">Гліб Старостенко — засновник і душа компанії</h3>
+                            <p class="mb-4"><strong>Засновник компанії, Гліб, живе на Балі вже більшь 10 років і є одним із найвідоміших гідів на острові.</strong><br><br>
+<strong>- 9 сезонів співпраці з Discovery Channel (2003–2014).</strong><br>
+  Упродовж дев’яти знімальних сезонів працював оператором для міжнародних документальних і репортажних проектів. Це дало унікальний досвід роботи в складних умовах та глибоке розуміння історії, культури і природи Індонезії.<br><br>
+<strong>- Авторські тури з 2004 року.</strong><br>
+  Досвід організації власних подорожей і турів налічує понад 20 років. Серед них — авторські мототури у різних країнах світу, а також індивідуальні та групові програми на Балі.<br><br>
+<strong>- Особисте обличчя компанії.</strong><br>
+  Гліб бере активну участь у створенні програм, формуванні концепції туру «Острів богів: 10 днів на Балі» і підготовці гідів.
+  👉 В окремих випадках він особисто проводить екскурсії у рамках цієї програми, додаючи унікальний авторський підхід і власні знання.
+  Це робить подорож більш камерною та автентичною, а для туристів є справжнім бонусом — отримати досвід від першої особи, засновника компанії.<br><br>
+<!-- <strong>- Хобі — дослідження культури та історії Індонезії.</strong><br>
+  Вивчення місцевих традицій і міфології стало невід’ємною частиною роботи. Цей бекграунд допомагає робити тури змістовними й насиченими історіями, які туристи не знайдуть у путівниках.<br><br> -->
+<strong>- Впізнаваність та медійність.</strong><br>
+  Брав участь у зйомках відомих тревел-блогерів, зокрема Андрія Буренка. Відео з його участю зібрали понад 7 мільйонів переглядів на YouTube. Завдяки цьому багато туристів дізнаються про нього ще до приїзду на Балі, що підвищує довіру до компанії.</p>
+                        </div>
+                        <div id="team" class="tab-content">
+                            <h3 class="text-2xl font-semibold mb-4 text-center">Наша команда та переваги для партнерів</h3>
+                            
+                            <h4 class="text-xl font-semibold mt-6 mb-2">Наша команда</h4>
+                            <ul class="list-disc list-inside space-y-2 mb-4 pl-4 text-gray-700">
+                                <li><strong>Гіди і супроводжуючі</strong> — україномовні та англомовні, знайомі з менталітетом Українськіх клієнтів.</li>
+                                <li><strong>Водії і персонал</strong> — працюють з нами багато сезонів, орієнтовані на високі стандарти сервісу.</li>
+                                <li><strong>Організація на місці</strong> — уся команда відпрацьована, забезпечує комфорт і безпеку 24/7.</li>
+                            </ul>
+
+                            <h4 class="text-xl font-semibold mt-8 mb-2">Чому з нами вигідно працювати агентствам</h4>
+                            <ul class="list-disc list-inside space-y-2 mb-4 pl-4 text-gray-700">
+                                <li><strong>Ексклюзивність:</strong> програма «Острів богів» не продається у відкритому доступі. Вона реалізується лише через партнерську B2B-систему.</li>
+                                <li><strong>White-label матеріали:</strong> партнери отримують готові рекламні інструменти — презентації, Reels, фото і тексти без брендингу. Їх можна просувати як власний продукт.</li>
+                                <li><strong>Цінова стратегія:</strong> навіть якщо клієнт звертається до нас напряму, ми спрямовуємо його до українських партнерів, щоб зберегти ексклюзивність і вашу роль у продажу.</li>
+                                <li><strong>Пріоритет задоволення клієнта:</strong> наш принцип — жоден турист не повинен повернутися додому незадоволеним. Ми готові покрити додаткові витрати, якщо це потрібно для збереження позитивного досвіду клієнта.</li>
+                                <li><strong>Розв’язання спорів:</strong> ми працюємо у партнерській логіці: якщо виникають труднощі, беремо відповідальність на себе і вирішуємо все конструктивно.</li>
+                            </ul>
+
+                            <p class="mt-6 bg-teal-50 p-4 rounded-lg"><strong>Таким чином:</strong> ми не закриваємо себе виключно на українську аудиторію, але підкреслюємо, що не співпрацюємо з агресором; акцентуємо, що саме програма «Острів богів: 10 днів на Балі» має 24 приватних + 19 групових успішних реалізацій в 2024-25 році, а досвід компанії загалом - ще ширший.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Концепція туру -->
+        <section id="concept" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">Концепція нашого туру</h2>
+                 <div class="max-w-3xl mx-auto text-left text-gray-600 mb-10">
+                    <p class="mb-4"><strong>Основна мета</strong><br>Тур «Острів богів: 10 днів на Балі» створений як баланс трьох складових:</p>
+                    <ul class="space-y-2 pl-5" style="list-style-type: '🌴';">
+                        <li><span class="ml-2"><strong>Екскурсії та пригоди</strong> - щоб побачити головні скарби Балі та отримати яскраві емоції.</span></li>
+                        <li><span class="ml-2"><strong>Релакс і wellness</strong> - щоб перезавантажитися фізично та емоційно.</span></li>
+                        <li><span class="ml-2"><strong>Культурне занурення</strong> - щоб відчути справжній дух острова, а не лише туристичні фасади.</span></li>
+                    </ul>
+                 </div>
+                <div id="concept-cards-accordion" class="grid md:grid-cols-3 gap-8 text-left">
+                    <!-- Локації туру -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 bg-gray-100 hover:bg-gray-200 transition">
+                            <span class="font-semibold text-lg">Локації туру</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5">
+                            <p class="text-gray-600 mb-2">
+                                <strong>Тривалість:</strong> 10 днів / 9 ночей.<br>
+                                <strong>Група:</strong> від 6 до 18 осіб (оптимально 10).
+                            </p>
+                            <p class="text-gray-600"><strong>Основні локації проживання:</strong></p>
+                            <ul class="list-disc list-inside text-gray-600 pl-2 mt-1 space-y-1">
+                                <li><strong>Убуд</strong> (4 ночі) – культурна і духовна столиця Балі.</li>
+                                <li><strong>Санур</strong> (3 ночі) – спокійний курорт з доступом до островів.</li>
+                                <li><strong>Нуса-Пеніда</strong> - візитна картка Балі (один день).</li>
+                                <li><strong>Нуса-Дуа</strong> (2 ночі) – елітна зона для завершення відпочинку.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Ключові моменти -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                         <button class="accordion-button w-full flex justify-between items-center text-left p-5 bg-gray-100 hover:bg-gray-200 transition">
+                            <span class="font-semibold text-lg">Ключові моменти</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5">
+                             <ul class="list-disc list-inside text-gray-600 pl-2 mt-1 space-y-2">
+                                <li><strong>Справжня церемонія Мелукіт</strong> у приватному храмі з брахманом — духовне очищення і знайомство з традиціями.</li>
+                                <li><strong>Сходження на вулкан Батур</strong> та відпочинок у гарячих джерелах.</li>
+                                <li><strong>Одноденна поїздка на Нуса-Пеніду</strong> (Angel’s Billabong, Broken Beach, Kelingking, Crystal Bay).</li>
+                                <li><strong>Йога, саундхілінг, SPA</strong> - wellness-елементи туру.</li>
+                                <li><strong>Майстер-класи:</strong> срібло, батік, танці, кулінарія (за бажанням).</li>
+                                <li><strong>Ранні виїзди:</strong> побачити Балі без натовпу і без пробок.</li>
+                                <li><strong>Вільні дні з опціями:</strong> рафтинг, зоопарк, кулінарний клас у Санурі тощо.</li>
+                                <li><strong>Улувату та Джимбаран</strong> - завершення подорожі з океаном, храмом і морепродуктами.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Особливості  -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                         <button class="accordion-button w-full flex justify-between items-center text-left p-5 bg-gray-100 hover:bg-gray-200 transition">
+                            <span class="font-semibold text-lg">Особливості</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5">
+                             <ul class="list-disc list-inside text-gray-600 pl-2 mt-1 space-y-2">
+                               <li><strong>Програма</strong> чергує насичені дні з вільними, що дозволяє уникати перевтоми.</li>
+                               <li><strong>Учасники</strong> мають вибір: брати участь у додаткових активностях чи присвятити час відпочинку. Це дає відчуття «свободи всередині організованої подорожі», чого бракує у більшості групових турів.</li>
+                               <li><strong>Усі</strong> переїзди включають в себе оглядову екскурсію.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Унікальність -->
+        <section id="features" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">Унікальні родзинки туру</h2>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-x-12 gap-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-teal-500 text-white font-bold">✓</div>
+                        <div>
+                            <h4 class="font-semibold text-lg">👥 Невеликі групи</h4>
+                            <p class="text-gray-600">Ми працюємо з групами від 6 до 18 осіб, що гарантує персональну увагу кожному.</p>
+                            <p class="text-gray-600 mt-2"><strong>При необхідності</strong>, ми можемо запустити кілька паралельних груп. Такий досвід у нас вже був, і все проходило ідеально: кожна група жила своєю атмосферою, але при цьому всі отримували однаково високий рівень сервісу.</p>
+                            <p class="text-gray-600 mt-2">💫 Завдяки цьому гості відчувають себе не туристами в масовому потоці, а учасниками особливої авторської подорожі.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-teal-500 text-white font-bold">✓</div>
+                        <div>
+                            <h4 class="font-semibold text-lg">🌅 Ранні виїзди</h4>
+                            <p class="text-gray-600">Так, у нас бувають дуже ранні підйоми, але саме це ми перетворюємо на сильну сторону туру.</p>
+                            <p class="text-gray-600 mt-2">&nbsp;<strong>Найважливіше:</strong>&nbsp;ранній виїзд дає можливість встигнути змінити локацію, доїхати до наступного готелю і заселитися ще вдень, до заходу сонця.</p>
+                            <p class="text-gray-600 mt-2">💫 Ранні виїзди - це зручність, турбота і можливість побачити Балі без натовпу і без пробок, залишаючись в ресурсі на весь день.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Программа по дням -->
+        <section id="program" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">Програма туру: 10 днів / 9 ночей</h2>
+                <p class="max-w-3xl mx-auto text-center text-gray-600 mb-10">Натисніть на будь-який день, щоб побачити деталі та <span class="font-semibold text-teal-600">згенерувати готовий допис для ваших соцмереж!</span></p>
+                <div class="max-w-4xl mx-auto space-y-4" id="accordion-container">
+                    <!-- День 1 -->
+                    <div class="border rounded-lg shadow-sm overflow-hidden bg-white">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 bg-gray-100 hover:bg-gray-200 transition">
+                            <span class="font-semibold text-lg">День 1: Прибуття в Убуд – культурне серце Балі</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5">
+                            <p class="mb-4 text-gray-700"><strong>Зустріч в аеропорту, трансфер і поселення в готель Westin Ubud Resort 5*.</strong> Це ідеальне місце для відновлення сил після перельоту. Готель оточений пишною зеленню і пропонує розкішні умови для відпочинку. Вечір вільний для адаптації та насолоди атмосферою.</p>
+                            <div class="mt-4 pt-4 border-t text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="День 1: Прибуття на Балі. Трансфер в культурне серце острова — Убуд. Поселення в розкішний готель Westin Ubud Resort 5* для відпочинку та акліматизації серед тропічної зелені.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- День 2 -->
+                    <div class="border rounded-lg shadow-sm overflow-hidden bg-white">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 bg-gray-100 hover:bg-gray-200 transition">
+                            <span class="font-semibold text-lg">День 2: Магія Убуду та духовні практики</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5">
+                            <p class="mb-4 text-gray-700"><strong>Після сніданку ми вирушимо до храму Тірта Емпул для ритуалу очищення.</strong> Далі на нас чекають знамениті рисові тераси Тегаллаланг та гойдалки. Після обіду ми відвідаємо традиційний арт-ринок та Королівський палац, а на завершення дня — Ліс Мавп. Повернення в готель для відпочинку.</p>
+                            <div class="mt-4 pt-4 border-t text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="День 2: Занурення в магію Убуду. Ритуал очищення в храмі Тірта Емпул, захоплюючі краєвиди рисових терас Тегаллаланг, відвідування Королівського палацу та знайомство з милими мешканцями Лісу Мавп.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- День 3-4 -->
+                    <div class="border rounded-lg shadow-sm overflow-hidden bg-white">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 bg-gray-100 hover:bg-gray-200 transition">
+                            <span class="font-semibold text-lg">Дні 3-4: Вулкан Батур та північ острова</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5">
+                            <p class="mb-4 text-gray-700"><strong>На третій день ми переїжджаємо до регіону Кінтамані.</strong> Дорогою відвідаємо водоспад Канто Лампо та кавові плантації. Поселення в готель Toya Devasya з термальними джерелами та видом на вулкан. Четвертий день почнеться зі сходу сонця на вулкані Батур. Далі — відвідування храму Бесакіх, «матері всіх храмів», та водного палацу Тірта Гангга. Переїзд до готелю Munduk Moding Plantation.</p>
+                            <div class="mt-4 pt-4 border-t text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="Дні 3-4: Підкорення вулкану та краса півночі. Схід сонця на вулкані Батур, релакс у термальних джерелах Toya Devasya, відвідування величного храму Бесакіх та водного палацу Тірта Гангга.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- День 5-6 -->
+                    <div class="border rounded-lg shadow-sm overflow-hidden bg-white">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 bg-gray-100 hover:bg-gray-200 transition">
+                            <span class="font-semibold text-lg">Дні 5-6: Водоспади та містика Бедугулу</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5">
+                            <p class="mb-4 text-gray-700"><strong>П'ятий день ми присвятимо дослідженню водоспадів-гігантів: Секumpul та Aling-Aling, де можна не тільки купатися, але й стрибати зі скель.</strong> Повернення до готелю Munduk Moding Plantation. На шостий день ми відвідаємо ворота Хандара, храм Улун Дану на озері Братан та покинутий готель Bedugul. Переїзд на південь острова та поселення в готель Ayodya Resort 5* в Нуса-Дуа.</p>
+                             <div class="mt-4 pt-4 border-t text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="Дні 5-6: Пригоди на півночі Балі. Підкорення величних водоспадів Секумпул та Алінг-Алінг, фото біля містичних воріт Хандара, відвідування храму на воді Улун Дану та загадкового покинутого готелю.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- День 7-8 -->
+                    <div class="border rounded-lg shadow-sm overflow-hidden bg-white">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 bg-gray-100 hover:bg-gray-200 transition">
+                            <span class="font-semibold text-lg">Дні 7-8: Пляжний відпочинок та океан</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5">
+                            <p class="mb-4 text-gray-700"><strong>Ці дні присвячені релаксу в одному з найкращих готелів Нуса-Дуа — Ayodya Resort.</strong> На сьомий день ми відвідаємо найкращі пляжі півдня: Padang-Padang, Green Bowl та Melasti. Вечеря з морепродуктів на березі океану в Джимбарані. Восьмий день — вільний час для насолоди океаном та послугами готелю.</p>
+                            <div class="mt-4 pt-4 border-t text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="Дні 7-8: Райський відпочинок на океані. Релакс в розкішному Ayodya Resort 5* в Нуса-Дуа, відвідування інстаграмних пляжів Паданг-Паданг та Меласті, та романтична вечеря з морепродуктами на пляжі Джимбаран.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- День 9-10 -->
+                    <div class="border rounded-lg shadow-sm overflow-hidden bg-white">
+                         <button class="accordion-button w-full flex justify-between items-center text-left p-5 bg-gray-100 hover:bg-gray-200 transition">
+                            <span class="font-semibold text-lg">Дні 9-10: Захід сонця в Улувату та від'їзд</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5">
+                            <p class="mb-4 text-gray-700"><strong>На дев'ятий день ми відвідаємо парк GWK зі статуєю Гаруди, а ввечері поїдемо до храму Улувату, щоб насолодитися заходом сонця та подивитися традиційний танець Кечак.</strong> Десятий день — вільний час, відпочинок, купівля сувенірів та трансфер в аеропорт відповідно до часу вильоту.</p>
+                            <div class="mt-4 pt-4 border-t text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="День 9: Магія Улувату. Відвідування парку GWK з гігантською статуєю Гаруди, а потім — неймовірний захід сонця над океаном біля храму Улувату під звуки містичного танцю Кечак.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Готелі -->
+        <section id="hotels" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">Готелі, які ми використовуємо</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center">
+                        <img src="https://placehold.co/400x300/e2e8f0/334155?text=Westin+Ubud" alt="Westin Ubud" class="rounded-lg mb-4 mx-auto">
+                        <h3 class="text-xl font-semibold mb-2">Убуд (Westin Ubud Resort & Spa 5*)</h3>
+                        <p class="text-gray-600">Розкішний курорт із неймовірним видом на джунглі, ідеальний для релаксу та занурення в атмосферу Убуду.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center">
+                         <img src="https://placehold.co/400x300/e2e8f0/334155?text=Munduk+Moding" alt="Munduk Moding Plantation" class="rounded-lg mb-4 mx-auto">
+                        <h3 class="text-xl font-semibold mb-2">Мундук (Munduk Moding Plantation 5*)</h3>
+                        <p class="text-gray-600">Унікальний готель на кавовій плантації з одним із найкращих інфініті-басейнів у світі та панорамним видом.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-md text-center">
+                        <img src="https://placehold.co/400x300/e2e8f0/334155?text=Ayodya+Resort" alt="Ayodya Resort" class="rounded-lg mb-4 mx-auto">
+                        <h3 class="text-xl font-semibold mb-2">Нуса-Дуа (Ayodya Resort 5*)</h3>
+                        <p class="text-gray-600">Оновлений курорт на березі океану з величезною територією та бездоганним сервісом для пляжного відпочинку.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Система продажів -->
+        <section id="sales" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">Прозора та вигідна система продажів</h2>
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2">
+                        <img src="https://placehold.co/600x400/34d399/ffffff?text=Ваш+Успіх" alt="Sales System" class="rounded-lg shadow-xl">
+                    </div>
+                    <div class="md:w-1/2 space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-teal-600 mb-2">1. Висока комісія</h3>
+                            <p><strong>Агентська комісія становить 10–12%, що є одним з найкращих показників на ринку преміальних турів.</strong> Розмір комісії може бути збільшений для найнадійніших партнерів.</p>
+                        </div>
+                         <div>
+                            <h3 class="text-xl font-bold text-teal-600 mb-2">2. Прозоре ціноутворення</h3>
+                            <p><strong>Ви отримуєте повний розрахунок вартості туру, включаючи всі послуги, податки та нашу націнку.</strong> Для групових турів націнка становить 40–60%, для індивідуальних — 20–35%.</p>
+                        </div>
+                         <div>
+                            <h3 class="text-xl font-bold text-teal-600 mb-2">3. Підтримка та матеріали</h3>
+                            <p><strong>Ми надаємо готові презентації, фото, відео та доступ до генератора постів.</strong> Ваш особистий менеджер завжди на зв'язку для консультацій та оперативного бронювання.</p>
+                        </div>
+                         <div>
+                            <h3 class="text-xl font-bold text-teal-600 mb-2">4. Бонуси для партнерів</h3>
+                            <p><strong>Найкращі агенти отримують додаткові бонуси та можливість взяти участь в ексклюзивному рекламному турі на Балі.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Контакти -->
+        <section id="contact" class="py-20 bg-teal-700 text-white">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold mb-6">Готові запропонувати вашим клієнтам найкраще?</h2>
+                 <p class="max-w-2xl mx-auto mb-8">Зв'яжіться з нами, щоб отримати повну версію програми з цінами, детальні умови співпраці та доступ до маркетингових матеріалів.</p>
+                 <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-2xl text-gray-800">
+                     <h3 class="text-2xl font-bold mb-6">Стати партнером</h3>
+                     <form>
+                         <div class="mb-4">
+                             <input type="text" placeholder="Ваше ім'я" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+                         </div>
+                         <div class="mb-4">
+                             <input type="text" placeholder="Назва агентства" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+                         </div>
+                         <div class="mb-4">
+                             <input type="email" placeholder="Email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500">
+                         </div>
+                         <button type="submit" class="w-full bg-teal-500 text-white font-bold py-3 px-6 rounded-md hover:bg-teal-600 transition-colors">Надіслати заявку</button>
+                     </form>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Gemini API Modal -->
+        <div id="gemini-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+            <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
+                <div class="p-6">
+                    <div class="flex justify-between items-center border-b pb-3 mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">✨ Ваш допис для соцмереж</h3>
+                        <button id="close-modal-btn" class="text-gray-400 hover:text-gray-600 text-3xl leading-none">&times;</button>
+                    </div>
+                    <div id="modal-body">
+                        <!-- Loader -->
+                        <div id="loader" class="flex flex-col items-center justify-center py-10">
+                            <svg class="animate-spin h-8 w-8 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            <p class="mt-4 text-gray-600">Магія Балі твориться... Генеруємо текст...</p>
+                        </div>
+                        <!-- Result -->
+                        <div id="gemini-result" class="hidden">
+                            <textarea id="result-textarea" readonly class="w-full h-48 p-3 border rounded-md bg-gray-50 text-gray-700 resize-none focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+                        </div>
+                    </div>
+                    <div id="modal-footer" class="mt-6 text-right hidden">
+                        <button id="copy-text-btn" class="bg-teal-500 text-white font-bold py-2 px-4 rounded-md hover:bg-teal-600 transition-colors">Копіювати текст</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Ексклюзивні тури на Балі. Всі права захищено.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Мобільне меню
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuBtn) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Аккордеон програми туру
+            const accordionContainer = document.getElementById('accordion-container');
+            if (accordionContainer) {
+                accordionContainer.addEventListener('click', (e) => {
+                    const button = e.target.closest('.accordion-button');
+                    if (button) {
+                        const allButtons = accordionContainer.querySelectorAll('.accordion-button');
+                        allButtons.forEach(btn => {
+                            if (btn !== button) {
+                                btn.classList.remove('active');
+                            }
+                        });
+                        button.classList.toggle('active');
+                    }
+                });
+            }
+
+            // Аккордеон карток концепції
+            const conceptCardsAccordion = document.getElementById('concept-cards-accordion');
+            if (conceptCardsAccordion) {
+                const buttons = conceptCardsAccordion.querySelectorAll('.accordion-button');
+                buttons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        button.classList.toggle('active');
+                    });
+                });
+            }
+            
+            // Таби
+            const tabContainer = document.getElementById('tabs-section');
+            if (tabContainer) {
+                const tabButtons = tabContainer.querySelectorAll('.tab-button');
+                const tabContents = tabContainer.querySelectorAll('.tab-content');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabContents.forEach(content => content.classList.remove('active'));
+
+                        button.classList.add('active');
+                        const tabId = button.dataset.tab;
+                        const activeTabContent = document.getElementById(tabId);
+                        if(activeTabContent) {
+                            activeTabContent.classList.add('active');
+                        }
+                    });
+                });
+            }
+
+            // Gemini API Modal
+            const modal = document.getElementById('gemini-modal');
+            const modalContent = document.getElementById('modal-content');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const generatePostBtns = document.querySelectorAll('.generate-post-btn');
+            const loader = document.getElementById('loader');
+            const geminiResult = document.getElementById('gemini-result');
+            const resultTextarea = document.getElementById('result-textarea');
+            const modalFooter = document.getElementById('modal-footer');
+            const copyTextBtn = document.getElementById('copy-text-btn');
+
+            const openModal = () => {
+                if (!modal || !modalContent) return;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => modalContent.classList.add('scale-100', 'opacity-100'), 10);
+            };
+
+            const closeModal = () => {
+                if (!modal || !modalContent) return;
+                modalContent.classList.remove('scale-100', 'opacity-100');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                    if(loader) loader.style.display = 'flex';
+                    if(geminiResult) geminiResult.classList.add('hidden');
+                    if(modalFooter) modalFooter.classList.add('hidden');
+                    if(resultTextarea) resultTextarea.value = '';
+                }, 300);
+            };
+
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            if (modal) modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            generatePostBtns.forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    openModal();
+                    const context = btn.dataset.promptContext;
+                    const userQuery = `Напиши короткий, привабливий та емоційний рекламний пост для Instagram українською мовою про наступний етап подорожі на Балі. Зроби акцент на враженнях. Додай 3-5 релевантних хештегів. Ось контекст: ${context}`;
+                    
+                    try {
+                        const apiKey = ""; // Provided by Canvas
+                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+                        const payload = { contents: [{ parts: [{ text: userQuery }] }] };
+
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        
+                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+                        const result = await response.json();
+                        const text = result.candidates[0].content.parts[0].text;
+
+                        if(resultTextarea) resultTextarea.value = text;
+                        if(loader) loader.style.display = 'none';
+                        if(geminiResult) geminiResult.classList.remove('hidden');
+                        if(modalFooter) modalFooter.classList.remove('hidden');
+
+                    } catch (error) {
+                        console.error("Error calling Gemini API:", error);
+                        if(resultTextarea) resultTextarea.value = "На жаль, сталася помилка під час генерації тексту. Спробуйте ще раз пізніше.";
+                        if(loader) loader.style.display = 'none';
+                        if(geminiResult) geminiResult.classList.remove('hidden');
+                        if(modalFooter) modalFooter.classList.add('hidden');
+                    }
+                });
+            });
+
+            if (copyTextBtn) {
+                copyTextBtn.addEventListener('click', () => {
+                    if(resultTextarea) {
+                        resultTextarea.select();
+                        document.execCommand('copy');
+                        copyTextBtn.textContent = 'Скопійовано!';
+                        setTimeout(() => {
+                            copyTextBtn.textContent = 'Копіювати текст';
+                        }, 2000);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
