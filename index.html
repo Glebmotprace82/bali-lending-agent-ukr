@@ -110,7 +110,7 @@
     </nav>
 
     <!-- Головний екран -->
-    <header class="hero-section text-white pt-32 pb-20">
+    <!-- <header class="hero-section text-white pt-32 pb-20">
         <video autoplay loop muted playsinline id="hero-video" poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1748186226/Poster_RiseTrase_720p_fpvpt9.jpg">
             <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1748181760/01_RiceTerrase_720p_djqmf8.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -121,7 +121,25 @@
             <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Ексклюзивний тур «Острів богів», 10 днів/9 ночей. Подорож, що поєднує глибоке занурення в культуру, розкішний відпочинок та яскраві враження.</p>
             <a href="#program" class="bg-white text-teal-500 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-transform transform hover:scale-105">Дивитися програму</a>
         </div>
-    </header>
+    </header> -->
+    <header class="hero-section text-white pt-32 pb-20">
+    <video autoplay loop muted playsinline id="hero-video" 
+           poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1748186226/Poster_RiseTrase_720p_fpvpt9.jpg">
+        
+        <!-- Додано версію .webm для кращої оптимізації -->
+        <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1748181405/01_RiceTerrase_n3dtcf.webm" type="video/webm">
+        <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1748181760/01_RiceTerrase_720p_djqmf8.mp4" type="video/mp4">
+        Ваш браузер не підтримує відео.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Відкрийте вашим клієнтам<br>справжній Балі</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Ексклюзивний тур «Острів богів», 10 днів/9 ночей. Подорож, що поєднує глибоке занурення в культуру, розкішний відпочинок та яскраві враження.</p>
+            <a href="#program" class="bg-white text-teal-500 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-transform transform hover:scale-105">Дивитися програму</a>
+        </div>
+        <!-- Ваш текст і кнопка -->
+    </div>
+</header>
 
     <main>
         <!-- Про нас -->
@@ -730,8 +748,8 @@
     <br> — глибокий пляж Ayodya, панорами з висотного Bali Beach і тиша AnandaDara роблять подорож особливою.</p>
                     
                  </div>
-                <!-- Блок з фотографіями готелів -->
-<div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- <!-- Блок з фотографіями готелів -->
+<!--<div class="grid md:grid-cols-3 gap-8 mb-8">
     <div>
         <a href="https://anandadara.com/" target="_blank" rel="noopener noreferrer">
             <img src="https://placehold.co/400x300/e2e8f0/334155?text=Фото+AnandaDara" alt="Фото готелю AnandaDara" class="rounded-lg shadow-md w-full">
@@ -746,6 +764,47 @@
         <a href="https://ayodyaresortbali.com/" target="_blank" rel="noopener noreferrer">
             <img src="https://placehold.co/400x300/e2e8f0/334155?text=Фото+Ayodya" alt="Фото готелю Ayodya" class="rounded-lg shadow-md w-full">
                 </a>
+    </div>
+</div> -->
+                <!-- Блок з відео готелів -->
+<div class="grid md:grid-cols-3 gap-8 mb-8">
+    <!-- Готель AnandaDara -->
+    <div>
+        <a href="https://anandadara.com/" target="_blank" rel="noopener noreferrer"title="Дізнатись більше про готель AnandaDara в джунглях Убуду">
+            <video autoplay loop muted playsinline preload="none" 
+                   poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757433995/01_AnanDaraUbud_poster_tibppt.webp" 
+                   class="rounded-lg shadow-md w-full">
+                <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757433699/01_AnanDaraUbud_720p_25fps_i2eerk.webm" type="video/webm">
+                <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757433693/01_AnanDaraUbud_720p_25fps_kato0g.mp4" type="video/mp4">
+                Ваш браузер не підтримує відео.
+            </video>
+        </a>
+    </div>
+    <!-- Готель Bali Beach -->
+    <div>
+        <a href="https://balibeachsanur.com/" target="_blank" rel="noopener noreferrer" title="Відкрити сайт розкішного пляжного готелю Ayodya Resort Bali">
+            <video autoplay loop muted playsinline preload="none" 
+                   poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757433998/02_BaliBich_poster_jgga6d.webp" 
+                   class="rounded-lg shadow-md w-full">
+                <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757433693/02_BaliBich_720p_25fps_ru0v4y.webm" type="video/webm">
+                <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757433694/02_BaliBich_720p_25fps_ghl2fe.mp4" type="video/mp4">
+                Ваш браузер не підтримує відео.
+            </video>
+        </a>
+    </div>
+    <!-- Готель Ayodya -->
+    <div>
+        <a href="https://ayodyaresortbali.com/" target="_blank" rel="noopener noreferrer"title="Відкрити сайт розкішного пляжного готелю Ayodya Resort Bali">
+
+
+            <video autoplay loop muted playsinline preload="none" 
+                   poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757434002/03_Aoydia_poster_xoue1k.webp" 
+                   class="rounded-lg shadow-md w-full">
+                <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757433695/03_Aoydia_720p_25fps_mnk582.webm" type="video/webm">
+                <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757433695/03_Aoydia_720p_25fps_rxrds1.mp4" type="video/mp4">
+                Ваш браузер не підтримує відео.
+            </video>
+        </a>
     </div>
 </div>
                 <div id="what-is-included-accordion" class="grid md:grid-cols-3 gap-8 text-left">
