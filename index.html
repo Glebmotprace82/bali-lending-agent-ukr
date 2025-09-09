@@ -110,7 +110,7 @@
     </nav>
 
     <!-- Головний екран -->
-      <header class="hero-section text-white pt-32 pb-20">
+     <!-- <header class="hero-section text-white pt-32 pb-20">
         <video autoplay loop muted playsinline id="hero-video" poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1748186226/Poster_RiseTrase_720p_fpvpt9.jpg">
             <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1748181760/01_RiceTerrase_720p_djqmf8.mp4" type="video/mp4">
             Your browser does not support the video tag.
@@ -121,24 +121,39 @@
             <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Ексклюзивний тур «Острів богів», 10 днів/9 ночей. Подорож, що поєднує глибоке занурення в культуру, розкішний відпочинок та яскраві враження.</p>
             <a href="#program" class="bg-white text-teal-500 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-transform transform hover:scale-105">Дивитися програму</a>
         </div>
-    </header> 
-    <!-- <header class="hero-section text-white pt-32 pb-20">
-    <video autoplay loop muted playsinline id="hero-video" 
-           poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1748186226/Poster_RiseTrase_720p_fpvpt9.jpg">
-        
-        <!-- Додано версію .webm для кращої оптимізації -->
-        <!--<source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1748181405/01_RiceTerrase_n3dtcf.webm" type="video/webm">
-        <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1748181760/01_RiceTerrase_720p_djqmf8.mp4" type="video/mp4">
-        Ваш браузер не підтримує відео.
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="container mx-auto px-6 text-center relative z-10">
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Відкрийте вашим клієнтам<br>справжній Балі</h1>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Ексклюзивний тур «Острів богів», 10 днів/9 ночей. Подорож, що поєднує глибоке занурення в культуру, розкішний відпочинок та яскраві враження.</p>
-            <a href="#program" class="bg-white text-teal-500 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-transform transform hover:scale-105">Дивитися програму</a>
-        </div>
-        <!-- Ваш текст і кнопка -->
-<!--</header> -->
+    </header> -->
+    <header class="hero-section relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1748186226/Poster_RiseTrase_720p_fpvpt9.jpg"
+    class="absolute inset-0 w-full h-full object-cover z-0"
+  >
+    <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1748181405/01_RiceTerrase_n3dtcf.webm" type="video/webm">
+    <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1748181760/01_RiceTerrase_720p_djqmf8.mp4" type="video/mp4">
+    Ваш браузер не підтримує відео.
+  </video>
+  <!-- Overlay для затемнения -->
+  <div class="absolute inset-0 bg-black/60 z-10"></div>
+  <!-- Контент -->
+  <div class="container mx-auto px-6 text-center relative z-20">
+    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+      Відкрийте вашим клієнтам<br>справжній Балі
+    </h1>
+    <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">
+      Ексклюзивний тур «Острів богів», 10 днів/9 ночей. Подорож, що поєднує глибоке занурення в культуру, розкішний відпочинок та яскраві враження.
+    </p>
+    <a
+      href="#program"
+      class="bg-white text-teal-500 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-transform hover:scale-105"
+    >
+      Дивитися програму
+    </a>
+  </div>
+</header>
+
 
 
     <main>
