@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Эксклюзивный тур на Бали 10 дней/9 ночей - Презентация для Агентов</title>
+    <title>Ексклюзивний тур на Балі 10 днів/9 ночей - Презентація для агентів</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,17 +35,17 @@
         background-color: rgba(0,0,0,0.6);
         z-index: -50;
     }
-    /* НОВЫЕ СТИЛИ ДЛЯ АККОРДЕОНА НА CSS GRID */
+        /* НОВІ СТИЛІ ДЛЯ АКОРДЕОНА НА CSS GRID */
 .accordion-content {
     display: grid;
     grid-template-rows: 0fr; /* В закрытом состоянии высота строки - 0 */
     transition: grid-template-rows 0.5s ease-out, padding 0.5s ease-out;
 }
 .accordion-content > div {
-    overflow: hidden; /* Содержимое внутренней обертки будет обрезаться */
+    overflow: hidden; /* Вміст внутрішньої обгортки буде обрізаний */
 }
 .accordion-button.active + .accordion-content {
-    grid-template-rows: 1fr; /* В открытом состоянии - растягиваем до полного размера контента */
+    grid-template-rows: 1fr; /* У відкритому стані - розтягуємо до повного розміру контенту */
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -95,68 +95,68 @@
     .text-shadow-strong {
         text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
     }
-                                /* --- СТИЛИ ДЛЯ НОВОЙ ГАЛЕРЕИ --- */
+        /* --- СТИЛЬ ДЛЯ НОВОЇ ГАЛЕРЕЇ --- */
 .gallery-slide {
-    transition: opacity 0.7s ease-in-out; /* Плавное изменение прозрачности */
+    transition: opacity 0.7s ease-in-out; /* Плавна зміна прозорості */
 }
 
-/* Стиль для активной точки-индикатора */
+/* Стиль для активної точки-індикатора */
 .gallery-dot.active {
-    background-color: #2dd4bf; /* Бирюзовый цвет, как в вашем дизайне */
+    background-color: #2dd4bf; /* Бірюзовий колір, як у вашому дизайніБірюзовий колір, як у вашому дизайні */
     transform: scale(1.25);
 }
-/* --- СТИЛИ ДЛЯ СПИСКОВ С ГАЛОЧКАМИ --- */
+/* --- СТИЛІ ДЛЯ СПИСКІВ З ГАЛОЧКАМИ --- */
 .list-checkmark {
-    list-style-type: none; /* Убираем стандартные точки */
-    padding-left: 0; /* Убираем стандартный отступ списка */
+    list-style-type: none; /* Прибираємо стандартні крапки */
+        padding-left: 0; /* Прибираємо стандартний відступ списку */
 }
 
 .list-checkmark li {
-    position: relative; /* Необходимо для позиционирования галочки */
-    padding-left: 1.75rem; /* Создаем место для галочки (28px) */
-    margin-bottom: 0.5rem; /* Расстояние между пунктами списка */
+    position: relative; /* Необхідно для позиціонування галочки */
+    padding-left: 1.75rem; /* Створюємо місце для галочки (28px) */
+    margin-bottom: 0.5rem; /* Відстань між пунктами списку */
 }
 
 .list-checkmark li::before {
-    content: '✓'; /* Наша новая иконка-галочка */
+    content: '✓'; /* Наша нова іконка-галочка */
     position: absolute;
     left: 0;
-    top: -2px; /* Немного поднимаем для лучшего визуального центрирования */
-    color: #14b8a6; /* Это цвет, соответствующий вашему bg-teal-500 */
-    font-weight: bold; /* Делаем галочку жирной */
-    font-size: 1.25rem; /* Делаем галочку немного больше текста */
+    top: -2px; /* Трохи піднімаємо для кращого візуального центрування */
+    color: #14b8a6; /* Це колір, що відповідає вашому bg-teal-500 */
+    font-weight: bold; /* Робимо галочку жирною */
+    font-size: 1.25rem; /* Робимо галочку трохи більшою за текст */
 }
-/* --- СТИЛИ ДЛЯ НОВОГО МОБИЛЬНОГО МЕНЮ --- */
+/* --- СТИЛІ ДЛЯ НОВОГО МОБІЛЬНОГО МЕНЮ --- */
 body.menu-open {
-    overflow: hidden; /* Запрещаем прокрутку страницы, когда меню открыто */
+    overflow: hidden; /* Ззабороняємо прокрутку сторінки, коли меню відкрито */
 }
 
 #mobile-menu-panel {
-    transform: translateX(-100%); /* Прячем меню слева за пределами экрана */
-    transition: transform 0.3s ease-in-out; /* Анимация выезда */
+    transform: translateX(-100%); /* Приховуємо меню зліва за межами екрану */
+    transition: transform 0.3s ease-in-out; /* Анімація виїзду */
 }
 
 #mobile-menu-overlay {
-    opacity: 0; /* Делаем фон невидимым */
-    transition: opacity 0.3s ease-in-out; /* Анимация появления */
+    opacity: 0; /* Робимо фон невидимим*/
+    transition: opacity 0.3s ease-in-out; /*Анімація появи*/
 }
 
-/* Стили для ОТКРЫТОГО состояния */
+/* Стилі для ВІДКРИТОГО стану */
 body.menu-open #mobile-menu-container {
-    display: block; /* Делаем контейнер видимым */
+    display: block; /* Робимо контейнер видимим*/
 }
 
 body.menu-open #mobile-menu-panel {
-    transform: translateX(0); /* Возвращаем меню на экран */
+    transform: translateX(0); /* Повертаємо меню на екран */
 }
 
 body.menu-open #mobile-menu-overlay {
-    opacity: 1; /* Делаем фон видимым */
+    opacity: 1; /* Робимо фон видимим*/
 }
-        /* Скрываем видео на экранах шириной 768px и меньше */
+        /* Приховуємо відео на екранах шириною 768px і менше*/
         @media (max-width: 768px) {
           #hero-video {
-            display: none; /* Прячем элемент видео */
+            display: none; /*Приховуємо елемент відео*/
           }
           .hero-section {
               background-image: url('https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Poster_Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent-poster@1024.jpg');
@@ -180,13 +180,13 @@ body.menu-open #mobile-menu-overlay {
     <div id="mobile-menu-container" class="fixed inset-0 z-[100] hidden">
         <div id="mobile-menu-overlay" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
         <div id="mobile-menu-panel" class="relative z-10 w-4/5 max-w-xs h-1/2 bg-white/90 backdrop-blur-lg p-6">
-            <a href="#about" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Кто мы</a>
-            <a href="#concept" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Концепция</a>
-            <a href="#features" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Уникальность</a>
-            <a href="#program" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Программа</a>
-            <a href="#hotel_new" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Отели</a>
-            <a href="#sales" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Система продаж</a>
-            <a href="#contact" class="block mt-4 text-center bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition">Стать партнером</a>
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Хто ми</a>
+            <a href="#concept" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Концепція</a>
+            <a href="#features" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Унікальність</a>
+            <a href="#program" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Програма</a>
+            <a href="#hotel_new" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Готелі</a>
+            <a href="#sales" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Система продажів</a>
+            <a href="#contact" class="block mt-4 text-center bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition">Стати партнером</a>
             </div>
         </div>
     </div>
