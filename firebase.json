@@ -1,4 +1,13 @@
+cat > firebase.json <<EOF
 {
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
   "functions": [
     {
       "source": "functions",
@@ -11,13 +20,6 @@
         "*.local"
       ]
     }
-  ],
-  "hosting": {
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  }
+  ]
 }
+EOF
