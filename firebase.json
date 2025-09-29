@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "balitourdon-lending-gleb82-ukr",
     "public": "public",
     "ignore": [
       "firebase.json",
