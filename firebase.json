@@ -1,4 +1,3 @@
-cat > firebase.json <<EOF
 {
   "hosting": {
     "public": "public",
@@ -22,4 +21,3 @@ cat > firebase.json <<EOF
     }
   ]
 }
-EOF
