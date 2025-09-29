@@ -2,9 +2,9 @@
 <html lang="ru" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Ексклюзивний тур на Балі 10 днів/9 ночей - Презентація для агентів</title>
-            <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эксклюзивный тур на Бали 10 дней/9 ночей - Презентация для Агентов</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -34,7 +34,38 @@
         bottom: 0;
         background-color: rgba(0,0,0,0.6);
         z-index: -50;
-   c
+    }
+    /* НОВЫЕ СТИЛИ ДЛЯ АККОРДЕОНА НА CSS GRID */
+.accordion-content {
+    display: grid;
+    grid-template-rows: 0fr; /* В закрытом состоянии высота строки - 0 */
+    transition: grid-template-rows 0.5s ease-out, padding 0.5s ease-out;
+}
+.accordion-content > div {
+    overflow: hidden; /* Содержимое внутренней обертки будет обрезаться */
+}
+.accordion-button.active + .accordion-content {
+    grid-template-rows: 1fr; /* В открытом состоянии - растягиваем до полного размера контента */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+    .accordion-button .arrow {
+        transition: transform 0.3s ease-in-out;
+    }
+    .accordion-button.active .arrow {
+        transform: rotate(180deg);
+    }
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 3px;
+        background-color: #2dd4bf;
+        margin: 1rem auto 0;
+    }
+    .tab-content {
+        display: none;
+    }
     .tab-content.active {
         display: block;
     }
@@ -64,70 +95,70 @@
     .text-shadow-strong {
         text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
     }
-    /* --- СТИЛІ ДЛЯ НОВОЇ ГАЛЕРЕЇ --- */
-    .gallery-slide {
-        transition: opacity 0.7s ease-in-out; /* Плавна зміна прозорості */
-    }
-
-    /* Стиль для активної точки-індикатора */
-    .gallery-dot.active {
-        background-color: #2dd4bf; /* Бірюзовий колір, як у вашому дизайні */
-        transform: scale(1.25);
-    }
-    /* --- СТИЛІ ДЛЯ СПИСКІВ З ГАЛОЧКАМИ --- */
-    .list-checkmark {
-        list-style-type: none; /* Прибираємо стандартні точки */
-        padding-left: 0; /* Прибираємо стандартний відступ списку */
-    }
-
-    .list-checkmark li {
-        position: relative; /* Необхідно для позиціонування галочки */
-        padding-left: 1.75rem; /* Створюємо місце для галочки (28px) */
-        margin-bottom: 0.5rem; /* Відстань між пунктами списку */
+                                /* --- СТИЛИ ДЛЯ НОВОЙ ГАЛЕРЕИ --- */
+.gallery-slide {
+    transition: opacity 0.7s ease-in-out; /* Плавное изменение прозрачности */
 }
 
-    .list-checkmark li::before {
-        content: '✓'; /* Наша нова іконка-галочка */
-        position: absolute;
-        left: 0;
-        top: -2px; /* Трохи піднімаємо для кращого візуального центрування */
-        color: #14b8a6; /* Це колір, що відповідає вашому bg-teal-500 */
-        font-weight: bold; /* Робимо галочку жирною */
-        font-size: 1.25rem; /* Робимо галочку трохи більшою за текст */
-    }
-    /* --- СТИЛІ ДЛЯ НОВОГО МОБІЛЬНОГО МЕНЮ -- - */
-    body.menu-open {
-        overflow: hidden; /* Забороняємо прокрутку сторінки, коли меню відкрито */
-    }
+/* Стиль для активной точки-индикатора */
+.gallery-dot.active {
+    background-color: #2dd4bf; /* Бирюзовый цвет, как в вашем дизайне */
+    transform: scale(1.25);
+}
+/* --- СТИЛИ ДЛЯ СПИСКОВ С ГАЛОЧКАМИ --- */
+.list-checkmark {
+    list-style-type: none; /* Убираем стандартные точки */
+    padding-left: 0; /* Убираем стандартный отступ списка */
+}
 
-    #mobile-menu-panel {
-        transform: translateX(-100%); /* Ховаємо меню зліва за межами екрану */
-        transition: transform 0.3s ease-in-out; /* Анімація виїзду */
-    }
+.list-checkmark li {
+    position: relative; /* Необходимо для позиционирования галочки */
+    padding-left: 1.75rem; /* Создаем место для галочки (28px) */
+    margin-bottom: 0.5rem; /* Расстояние между пунктами списка */
+}
 
-    #mobile-menu-overlay {
-        opacity: 0; /* Робимо фон невидимим */
-        transition: opacity 0.3s ease-in-out; /* Анімація появи */
-    }
+.list-checkmark li::before {
+    content: '✓'; /* Наша новая иконка-галочка */
+    position: absolute;
+    left: 0;
+    top: -2px; /* Немного поднимаем для лучшего визуального центрирования */
+    color: #14b8a6; /* Это цвет, соответствующий вашему bg-teal-500 */
+    font-weight: bold; /* Делаем галочку жирной */
+    font-size: 1.25rem; /* Делаем галочку немного больше текста */
+}
+/* --- СТИЛИ ДЛЯ НОВОГО МОБИЛЬНОГО МЕНЮ --- */
+body.menu-open {
+    overflow: hidden; /* Запрещаем прокрутку страницы, когда меню открыто */
+}
 
-    /* Стилі для ВІДКРИТОГО стану */
-    body.menu-open #mobile-menu-container {
-        display: block; /* Робимо контейнер видимим */
-    }
+#mobile-menu-panel {
+    transform: translateX(-100%); /* Прячем меню слева за пределами экрана */
+    transition: transform 0.3s ease-in-out; /* Анимация выезда */
+}
 
-    body.menu-open #mobile-menu-panel {
-        transform: translateX(0); /* Повертаємо меню на екран */
-    }
+#mobile-menu-overlay {
+    opacity: 0; /* Делаем фон невидимым */
+    transition: opacity 0.3s ease-in-out; /* Анимация появления */
+}
 
-    body.menu-open #mobile-menu-overlay {
-        opacity: 1; /* Робимо фон видимим */
-    }
-            /* Приховуємо відео на екранах шириною 768px і менше */
-            @media (max-width: 768px) {
-              #hero-video {
-                display: none; /* Приховуємо елемент відео */
-              }
-              .hero-section {
+/* Стили для ОТКРЫТОГО состояния */
+body.menu-open #mobile-menu-container {
+    display: block; /* Делаем контейнер видимым */
+}
+
+body.menu-open #mobile-menu-panel {
+    transform: translateX(0); /* Возвращаем меню на экран */
+}
+
+body.menu-open #mobile-menu-overlay {
+    opacity: 1; /* Делаем фон видимым */
+}
+        /* Скрываем видео на экранах шириной 768px и меньше */
+        @media (max-width: 768px) {
+          #hero-video {
+            display: none; /* Прячем элемент видео */
+          }
+          .hero-section {
               background-image: url('https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Poster_Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent-poster@1024.jpg');
               background-size: cover;
               background-position: center;
@@ -150,12 +181,12 @@
         <div id="mobile-menu-overlay" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
         <div id="mobile-menu-panel" class="relative z-10 w-4/5 max-w-xs h-1/2 bg-white/90 backdrop-blur-lg p-6">
             <a href="#about" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Кто мы</a>
-            <a href="#concept" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Концепція</a>
-            <a href="#features" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Унікальність</a>
-            <a href="#program" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Програма</a>
-            <a href="#hotel_new" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Готелі</a>
+            <a href="#concept" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Концепция</a>
+            <a href="#features" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Уникальность</a>
+            <a href="#program" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Программа</a>
+            <a href="#hotel_new" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Отели</a>
             <a href="#sales" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Система продаж</a>
-            <a href="#contact" class="block mt-4 text-center bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition">Стати партнером</a>
+            <a href="#contact" class="block mt-4 text-center bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition">Стать партнером</a>
             </div>
         </div>
     </div>
@@ -193,19 +224,19 @@
                         https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Other/baliguideagent-logo-bali-travel@1920.jpg 1920w,
                         https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Other/baliguideagent-logo-bali-travel@2560.jpg 2560w
                       "
-                      alt="Логотип компанії"
-                                            class="w-12 mr-4 rounded-md transition group-hover:brightness-75 group-hover:scale-105"
-                                          >
-                                        </picture>
-                                      </a>
-                                      <div class="hidden md:flex items-center justify-between flex-grow ml-6 lg:ml-10 text-sm xl:text-base">
-                                          <a href="#about" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Хто ми</a>
-                                          <a href="#concept" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Концепція</a>
-                                          <a href="#features" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Унікальність</a>
-                                          <a href="#program" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Програма</a>
-                                          <a href="#hotel_new" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Готелі</a>
-                                          <a href="#sales" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Система продажів</a>
-                                          <a href="#contact" class="bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition whitespace-nowrap">Стати партнером</a>
+                      alt="Логотип компании"
+                      class="w-12 mr-4 rounded-md transition group-hover:brightness-75 group-hover:scale-105"
+                    >
+                  </picture>
+                </a>
+                <div class="hidden md:flex items-center justify-between flex-grow ml-6 lg:ml-10 text-sm xl:text-base">
+                    <a href="#about" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Кто мы</a>
+                    <a href="#concept" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Концепция</a>
+                    <a href="#features" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Уникальность</a>
+                    <a href="#program" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Программа</a>
+                    <a href="#hotel_new" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Отели</a>
+                    <a href="#sales" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Система продаж</a>
+                    <a href="#contact" class="bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition whitespace-nowrap">Стать партнером</a>
                 </div>
                 <div class="md:hidden">
                     <button id="menu-btn" class="text-gray-800 focus:outline-none">
@@ -221,14 +252,14 @@
            poster="https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Poster_Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent-poster%401024.jpg">
         <source src="https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent.webm" type="video/webm">
         <source src="https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent.mp4" type="video/mp4">
-            Ваш браузер не підтримує відео.
+        Ваш браузер не поддерживает видео.
     </video>
     <div class="hero-overlay"></div>
     <div class="container mx-auto px-6 text-center relative z-10">
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Відкрийте вашим клієнтам<br>справжній Балі</h1>
-            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Ексклюзивний тур «Острів богів», 10 днів/9 ночей. Подорож, що поєднує глибоке занурення в культуру, розкішний відпочинок і яскраві враження.
-                        <a href="#program" class="bg-white text-teal-500 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-transform transform hover:scale-105 shadow-2xl shadow-teal-900/50">Переглянути програму</a>
-                    </div>
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Откройте вашим клиентам<br>настоящий Бали</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Эксклюзивный тур «Остров богов», 10 дней/9 ночей. Путешествие, сочетающее глубокое погружение в культуру, роскошный отдых и яркие впечатления.</p>
+            <a href="#program" class="bg-white text-teal-500 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-transform transform hover:scale-105 shadow-2xl shadow-teal-900/50">Смотреть программу</a>
+        </div>
 </header>
 <main>
     <div class="sticky-parent">
