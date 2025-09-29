@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ексклюзивний тур на Балі 10 днів/9 ночей - Презентація для Агентів</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="URL" imagesrcset="..." imagesizes="100vw">
+        <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+        #hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -100;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.6);
+            z-index: -50;
+        }
+        /* НОВЫЕ СТИЛИ ДЛЯ АККОРДЕОНА НА CSS GRID */
+    .accordion-content {
+        display: grid;
+        grid-template-rows: 0fr; /* В закрытом состоянии высота строки - 0 */
+        transition: grid-template-rows 0.5s ease-out, padding 0.5s ease-out;
+    }
+    .accordion-content > div {
+        overflow: hidden; /* Содержимое внутренней обертки будет обрезаться */
+    }
+    .accordion-button.active + .accordion-content {
+        grid-template-rows: 1fr; /* В открытом состоянии - растягиваем до полного размера контента */
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+        .accordion-button .arrow {
+            transition: transform 0.3s ease-in-out;
+        }
+        .accordion-button.active .arrow {
+            transform: rotate(180deg);
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #2dd4bf;
+            margin: 1rem auto 0;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-button.active {
+            color: #2dd4bf;
+            border-bottom: 3px solid #2dd4bf;
+        }
+        .sticky-parent {
+            position: relative;
+        }
+        .sticky-background {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            z-index: 10;
+        }
+        .sticky-background video,
+        .sticky-background img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .content-over-sticky {
+            position: relative;
+            z-index: 20;
+        }
+        .text-shadow-strong {
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+                                    /* --- СТИЛИ ДЛЯ НОВОЙ ГАЛЕРЕИ --- */
+    .gallery-slide {
+        transition: opacity 0.7s ease-in-out; /* Плавное изменение прозрачности */
+    }
+
+    /* Стиль для активной точки-индикатора */
+    .gallery-dot.active {
+        background-color: #2dd4bf; /* Бирюзовый цвет, как в вашем дизайне */
+        transform: scale(1.25);
+    }
+    /* --- СТИЛИ ДЛЯ СПИСКОВ С ГАЛОЧКАМИ --- */
+    .list-checkmark {
+        list-style-type: none; /* Убираем стандартные точки */
+        padding-left: 0; /* Убираем стандартный отступ списка */
+    }
+
+    .list-checkmark li {
+        position: relative; /* Необходимо для позиционирования галочки */
+        padding-left: 1.75rem; /* Создаем место для галочки (28px) */
+        margin-bottom: 0.5rem; /* Расстояние между пунктами списка */
+    }
+
+    .list-checkmark li::before {
+        content: '✓'; /* Наша новая иконка-галочка */
+        position: absolute;
+        left: 0;
+        top: -2px; /* Немного поднимаем для лучшего визуального центрирования */
+        color: #14b8a6; /* Это цвет, соответствующий вашему bg-teal-500 */
+        font-weight: bold; /* Делаем галочку жирной */
+        font-size: 1.25rem; /* Делаем галочку немного больше текста */
+    }
+    /* --- СТИЛИ ДЛЯ НОВОГО МОБИЛЬНОГО МЕНЮ --- */
+    body.menu-open {
+        overflow: hidden; /* Запрещаем прокрутку страницы, когда меню открыто */
+    }
+
+    #mobile-menu-panel {
+        transform: translateX(-100%); /* Прячем меню слева за пределами экрана */
+        transition: transform 0.3s ease-in-out; /* Анимация выезда */
+    }
+
+    #mobile-menu-overlay {
+        opacity: 0; /* Делаем фон невидимым */
+        transition: opacity 0.3s ease-in-out; /* Анимация появления */
+    }
+
+    /* Стили для ОТКРЫТОГО состояния */
+    body.menu-open #mobile-menu-container {
+        display: block; /* Делаем контейнер видимым */
+    }
+
+    body.menu-open #mobile-menu-panel {
+        transform: translateX(0); /* Возвращаем меню на экран */
+    }
+
+    body.menu-open #mobile-menu-overlay {
+        opacity: 1; /* Делаем фон видимым */
+    }
+            /* Скрываем видео на экранах шириной 768px и меньше */
+            @media (max-width: 768px) {
+              #hero-video {
+                display: none; /* Прячем элемент видео */
+              }
+              .hero-section {
+                  background-image: url('https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Poster_Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent-poster@1024.jpg');
+                  background-size: cover;
+                  background-position: center;
+              }
+              @media (min-width: 1440px) {
+                  .hero-section {
+                      background-image: url('https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Poster_Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent-poster@1920.jpg');
+                  }
+              }
+              @media (max-width: 768px) {
+                  .hero-section {
+                      background-image: url('https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Poster_Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent-poster@768.jpg');
+                  }
+              }
+
+    </style>
+</head>
+<body class="bg-black text-gray-800">
+    <div id="mobile-menu-container" class="fixed inset-0 z-[100] hidden">
+        <div id="mobile-menu-overlay" class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+        <div id="mobile-menu-panel" class="relative z-10 w-4/5 max-w-xs h-1/2 bg-white/90 backdrop-blur-lg p-6">
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Хто ми</a>
+            <a href="#concept" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Концепція</a>
+            <a href="#features" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Унікальність</a>
+            <a href="#program" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Програма</a>
+            <a href="#hotel_new" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Готелі</a>
+            <a href="#sales" class="block py-2 px-4 text-sm text-gray-600 hover:bg-teal-50 rounded">Система продажів</a>
+            <a href="#contact" class="block mt-4 text-center bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition">Стати партнером</a>
+            </div>
+        </div>
+    </div>
+    <!-- Навігація -->
+    <nav id="navbar" class="bg-white/80 backdrop-blur-md fixed w-full top-0 z-50 shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 lg:px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" id="logo-link" class="flex-shrink-0">
+    <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757565656/tourdone-logo-bali-travel-500_rh3gfi.webp
+    " alt="Логотип компанії" class="h-10 w-auto"></a>
+                <div class="hidden md:flex items-center justify-between flex-grow ml-6 lg:ml-10 text-sm xl:text-base">
+                    <a href="#about" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Хто ми</a>
+                    <a href="#concept" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Концепція</a>
+                    <a href="#features" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Унікальність</a>
+                    <a href="#program" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Програма</a>
+                    <a href="#hotel_new" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Готелі</a>
+                    <a href="#sales" class="text-gray-600 hover:text-teal-500 transition whitespace-nowrap">Система продажів</a>
+                    <a href="#contact" class="bg-teal-500 text-white px-4 py-2 rounded-full hover:bg-teal-600 transition whitespace-nowrap">Стати партнером</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Мобільне меню -->
+            <!-- Був тут -->
+        </div>
+    </nav>
+
+    <!-- Головний екран -->
+    <header class="hero-section text-white min-h-screen flex items-center justify-center">
+    <video autoplay loop muted playsinline id="hero-video"
+           poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1748186226/Poster_RiseTrase_720p_fpvpt9.jpg">
+        <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1748181405/01_RiceTerrase_n3dtcf.webm" type="video/webm">
+        <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1748181760/01_RiceTerrase_720p_djqmf8.mp4" type="video/mp4">
+        Ваш браузер не підтримує відео.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Відкрийте вашим клієнтам<br>справжній Балі</h1>
+            <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">Ексклюзивний тур «Острів богів», 10 днів/9 ночей. Подорож, що поєднує глибоке занурення в культуру, розкішний відпочинок та яскраві враження.</p>
+            <a href="#program" class="bg-white text-teal-500 font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-transform transform hover:scale-105 shadow-2xl shadow-teal-900/50">Дивитися програму</a>
+        </div>
+</header>
+ <main>
+<div class="sticky-parent">
+
+    <div class="sticky-background">
+        <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757604014/tourdone-nusa-penida-diamond-beach-swing_tzkzwl.webp" alt="Краєвид Балі для фону" class="w-full h-full object-cover">
+    </div>
+    <div class="content-over-sticky">
+   
+        <!-- Про нас -->
+        <section id="about" class="py-20 bg-transparent">
+            <div class="container mx-auto max-w-4xl px-6 bg-white/80 backdrop-blur-md text-gray-800 p-8 lg:p-12 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">Хто ми?</h2>
+                <div class="tabs-component">
+                    <div class="flex justify-center border-b border-gray-300 -mb-px">
+                        <button class="tab-button active py-3 px-5 font-semibold text-gray-800 transition" data-tab="who-we-are">Хто ми</button>
+                        <button class="tab-button py-3 px-5 font-semibold text-gray-500 hover:text-gray-800 transition" data-tab="founder">Про засновника</button>
+                        <button class="tab-button py-3 px-5 font-semibold text-gray-500 hover:text-gray-800 transition" data-tab="team">Команда та досвід</button>
+                    </div>
+                    <!-- Tab Content -->
+                    <div class="pt-8 text-gray-700 leading-relaxed">
+                        <div id="who-we-are" class="tab-content active">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Ліцензована туристична компанія з багаторічним досвідом</h3>
+                            <p class="mb-4"><img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757565655/tourdone-logo-bali-travel-150_o9ejnl.webp" alt="Логотип Tourdone" class="float-left w-12 mr-4 rounded-md"><strong>Tourdone Inter — туристична компанія, заснована у 2018 році на Балі.</strong> Ми є приймаючою стороною (DMC) і спеціалізуємося на організації авторських групових і індивідуальних турів на Балі та інші острови Індонезії. Ми працюємо для різних ринків — українського, європейського та інших міжнародних ринків.
+                        </div>
+                        <div id="founder" class="tab-content">
+                            <h3 class="text-2xl font-semibold mb-4 text-gray-900">Гліб Старостенко — засновник і душа компанії</h3>
+                            <p class="mb-4">
+                                <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757592192/tourdone-gleb-starostenko-founder-600_wyvovu.webp" alt="Фото Гліба Старостенка" class="float-left w-48 mr-6 mb-2 rounded-lg shadow-md"><strong>Засновник компанії, Гліб, живе на Балі вже понад 10 років і є одним із найвідоміших гідів на острові.</strong><br>
+                                <strong>- 9 сезонів співпраці з Discovery Channel (2003–2014).</strong><br>
+                                Упродовж дев’яти знімальних сезонів працював оператором для міжнародних документальних і репортажних проектів. Це дало унікальний досвід роботи в екстремальних умовах та глибоке розуміння історії, культури і природи Індонезії.<br><br>
+                                <strong>- Авторські тури з 2004 року.</strong><br>
+                                Досвід організації власних подорожей і турів налічує понад 20 років. Серед них — авторські мототури по різних країнах світу, а також індивідуальні та групові програми на Балі.<br><br>
+                                <strong>- Особисте обличчя компанії.</strong><br>
+                                Гліб бере активну участь у створенні програм, формуванні концепції туру «Острів богів: 10 днів на Балі» і підготовці гідів.
+                                👉 В окремих випадках він особисто проводить екскурсії у рамках цієї програми, додаючи унікальний авторський підхід і власні знання.
+                                Це робить подорож більш камерною та автентичною, а для туристів є справжнім бонусом — отримати досвід від першої особи, засновника компанії.<br><br>
+                                <strong>- Впізнаваність та медійність.</strong><br>
+                                Брав участь у зйомках відомих тревел-блогерів, зокрема Андрія Буренка. Відео з його участю зібрали понад 7 мільйонів переглядів на YouTube. Завдяки цьому багато туристів дізнаються про нього ще до приїзду на Балі, що підвищує довіру до компанії.</p>
+                        </div>
+                        <div id="team" class="tab-content">
+    <!--<h3 class="text-2xl font-semibold mb-4 text-center text-gray-900">Наша команда та переваги для партнерів</h3> -->
+    
+    <!-- Ось цей блок має йти одразу після заголовка -->
+    <!--<h4 class="text-xl font-semibold mt-6 mb-4 text-gray-900">Наша команда</h4> -->
+    <div class="space-y-6">
+
+        <!-- Блок 1: Гіди -->
+        <div class="flex items-start space-x-4">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757592193/tourdone-andika-local-guide-600_hopgvn.webp" alt="Іконка Гіди" class="w-24 h-24 rounded-full flex-shrink-0 object-cover border-2 border-teal-200">
+            <div>
+                <h5 class="font-semibold text-lg text-gray-800">Гіди та супроводжуючі</h5>
+                <p class="text-gray-600">Україномовні та англомовні, знайомі з менталітетом українських клієнтів.</p>
+            </div>
+        </div>
+
+        <!-- Блок 2: Водії -->
+        <div class="flex items-start space-x-4">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757599931/tourdone-bali-drivers-group-1200_rr88sh.webp" alt="Іконка Водії" class="w-24 h-24 rounded-full flex-shrink-0 object-cover border-2 border-teal-200">
+            <div>
+                <h5 class="font-semibold text-lg text-gray-800">Водії та персонал</h5>
+                <p class="text-gray-600">Працюють з нами багато сезонів, орієнтовані на високі стандарти сервісу.</p>
+            </div>
+        </div>
+
+        <!-- Блок 3: Організація -->
+        <div class="flex items-start space-x-4">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757592194/tourdone-our-tour-team-600_r6qs5v.webp" alt="Іконка Організація" class="w-24 h-25 rounded-full flex-shrink-0 object-cover border-2 border-teal-200">
+            <div>
+                <h5 class="font-semibold text-lg text-gray-800">Організація на місці</h5>
+                <p class="text-gray-600">Команда злагоджена, забезпечує комфорт і безпеку 24/7.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- А ось цей блок про переваги залишається без змін -->
+    <h4 class="text-xl font-semibold mt-8 mb-2 text-gray-900">Чому з нами вигідно працювати агентствам</h4>
+    <ul class="list-checkmark text-gray-700">
+        <li><strong>Ексклюзивність:</strong> програма «Острів богів» не продається у відкритому доступі. Вона реалізується лише через партнерську B2B-систему.</li>
+        <li><strong>White-label матеріали:</strong> партнери отримують готові рекламні інструменти — презентації, Reels, фото і тексти без брендингу. Їх можна просувати як власний продукт.</li>
+        <li><strong>Цінова стратегія:</strong> навіть якщо клієнт звертається до нас напряму, ми спрямовуємо його до українських партнерів, щоб зберегти ексклюзивність і вашу роль у продажу.</li>
+        <li><strong>Пріоритет задоволення клієнта:</strong> принцип компанії — жоден турист не повинен повернутися додому незадоволеним. Ми готові покрити додаткові витрати, якщо це потрібно для збереження позитивного досвіду клієнта.</li>
+        <li><strong>Розв’язання спорів:</strong> ми працюємо у партнерській логіці: якщо виникають труднощі, беремо відповідальність на себе і вирішуємо все конструктивно.</li>
+    </ul>
+    <p class="mt-6 border-l-4 border-teal-500 pl-4 text-gray-600"><strong>Таким чином:</strong> підкреслюємо,що саме програма «Острів богів: 10 днів на Балі» має 24 приватних + 19 групових успішних реалізацій в 2024-25 році, а досвід компанії загалом - ще ширший.</p>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Концепція туру -->
+        <section id="concept" class="py-20 bg-transparent">
+            <div class="container mx-auto max-w-4xl px-6 bg-white/80 backdrop-blur-md text-gray-800 p-8 lg:p-12 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">Концепція нашого туру</h2>
+                <div class="tabs-component">
+                    <div class="flex justify-center border-b border-gray-300 -mb-px">
+                        <button class="tab-button active py-3 px-5 font-semibold text-gray-800 transition" data-tab="concept-locations">Локації туру</button>
+                        <button class="tab-button py-3 px-5 font-semibold text-gray-500 hover:text-gray-800 transition" data-tab="concept-moments">Ключові моменти</button>
+                        <button class="tab-button py-3 px-5 font-semibold text-gray-500 hover:text-gray-800 transition" data-tab="concept-features">Особливості</button>
+                    </div>
+                    <div class="pt-8 text-gray-700 leading-relaxed">
+                        <div id="concept-locations" class="tab-content active">
+                             <p class="mb-2">
+                                <strong>Тривалість:</strong> 10 днів / 9 ночей.<br>
+                                <strong>Група:</strong> від 6 до 18 осіб (оптимально - 10).
+                            </p>
+                            <p><strong>Основні локації проживання:</strong></p>
+                            <ul class="list-checkmark text-gray-700">
+                                <li><strong>Убуд</strong> (4 ночі) – культурна та духовна столиця Балі.</li>
+                                <li><strong>Санур</strong> (3 ночі) – спокійний курорт з доступом до островів.</li>
+                                <li><strong>Нуса-Пеніда</strong>одноденна подорож, візитна картка Балі</li>
+                                <li><strong>Нуса-Дуа</strong> (2 ночі) – елітна зона для завершення відпочинку.</li>
+                            </ul>
+                        </div>
+                        <div id="concept-moments" class="tab-content">
+                              <ul class="list-checkmark text-gray-700">
+                                <li><strong>Справжня церемонія Мелукіт</strong> у приватному храмі з брахманом — духовне очищення і знайомство з традиціями.</li>
+                                <li><strong>Сходження на вулкан Батур</strong>з подальшим відпочинком у гарячих джерелах.</li>
+                                <li><strong>Одноденна поїздка на Нуса-Пеніду</strong> (Angel’s Billabong, Broken Beach, Kelingking, Crystal Bay).</li>
+                                <li><strong>Йога, саундхілінг, SPA</strong> - wellness-елементи туру.</li>
+                                <li><strong>Майстер-класи:</strong> срібло, батік, танці, кулінарія (за бажанням).</li>
+                                <li><strong>Ранні виїзди:</strong> побачити Балі без натовпу та без заторів.</li>
+                                <li><strong>Вільні дні з опціями:</strong> рафтинг, зоопарк, кулінарний клас у Санурі тощо.</li>
+                                <li><strong>Улувату та Джимбаран</strong> - завершення подорожі з океаном, храмом і морепродуктами.</li>
+                            </ul>
+                        </div>
+                        <div id="concept-features" class="tab-content">
+                            <ul class="list-checkmark text-gray-700">
+                               <li><strong>Програма</strong> чергує насичені дні з вільними, що дозволяє уникати перевтоми.</li>
+                               <li><strong>Учасники</strong> мають вибір: брати участь у додаткових активностях чи присвятити час відпочинку. Це дає відчуття «свободи всередині організованої подорожі», якого зазвичай бракує у більшості групових турів.</li>
+                               <li><strong>Усі</strong> переїзди супроводжуються оглядовою екскурсію.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Унікальність -->
+        <section id="features" class="py-20 bg-transparent">
+            <div class="container mx-auto max-w-4xl px-6 bg-white/80 backdrop-blur-md text-gray-800 p-8 lg:p-12 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">Унікальні родзинки туру</h2>
+                <div class="mx-auto grid md:grid-cols-2 gap-x-12 gap-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-teal-500 text-teal-100 font-bold">✓</div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-gray-900">👥 Невеликі групи</h4>
+                            <p class="text-gray-700">Ми працюємо з групами від 6 до 18 осіб, що гарантує персональну увагу кожному.</p>
+                            <p class="text-gray-700 mt-2"><strong>За потреби</strong>, ми можемо запустити кілька паралельних груп. Такий досвід у нас вже був, і все проходило ідеально: кожна група жила своєю атмосферою, але при цьому всі отримували однаково високий рівень сервісу.</p>
+                            <p class="text-gray-700 mt-2">💫 Завдяки цьому гості відчувають себе не туристами в масовому потоці, а учасниками особливої авторської подорожі.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 flex items-center justify-center h-10 w-10 rounded-full bg-teal-500 text-teal-100 font-bold">✓</div>
+                        <div>
+                            <h4 class="font-semibold text-lg text-gray-900"> 🌅 Ранні виїзди</h4>
+                            <p class="text-gray-700">Так, у нас бувають дуже ранні підйоми, але ми перетворюємо це на сильну сторону туру.</p>
+                            <p class="text-gray-700 mt-2">&nbsp;<strong>Найважливіше:</strong>&nbsp;ранній виїзд дає можливість встигнути змінити локацію, доїхати до наступного готелю і заселитися ще вдень, до заходу сонця.</p>
+                            <p class="text-gray-700 mt-2">💫 Ранні виїзди - це зручність, турбота і можливість побачити Балі без натовпу і без пробок, залишаючись в ресурсі на весь день.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+        
+<div class="sticky-parent">
+
+    <div class="sticky-background">
+        <video autoplay="" loop="" muted="" playsinline="" poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757601823/tourdone-bali-volcano-agung-sunrise-drone-flight-poster_vxwkzx.webp" class="w-full h-full object-cover">
+            <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757597014/bali-volcano-agung-sunrise-drone-flight_eo7v7s.webm" type="video/webm">
+            <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757597014/bali-volcano-agung-sunrise-drone-flight_ni2rwv.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="content-over-sticky">
+        <section id="program" class="py-20 bg-transparent text-white">
+            <div class="container mx-auto px-6">
+                <div class="container mx-auto max-w-4xl mb-10 bg-white/80 backdrop-blur-md text-gray-800 p-8 lg:p-12 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 section-title">Програма туру: 10 днів / 9 ночей</h2>
+                    <p class="max-w-3xl mx-auto text-center text-gray-600">Натисніть на будь-який день, щоб побачити деталі та <span class="font-semibold text-teal-600">згенерувати готовий допис для ваших соцмереж!</span></p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-4" id="accordion-container">
+                    <!-- День 1 -->
+                    <div class="bg-white/80 backdrop-blur-md text-gray-800 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 transition">
+                            <span class="font-semibold text-lg text-gray-800">День 1: Прибуття в Убуд - культурне серце Балі</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-700">
+                              <div>
+                            <p class="mb-2"><strong>Прибуття та зустріч:</strong></p>
+                            <p class="list-checkmark text-gray-700">
+                                ✈️Приліт в аеропорт Денпасар (DPS).<br>
+                                Оптимальний час прильоту (Emirates, Qatar Airways) - 16:30.<<br>
+                                Інші рейси (Turkish, KLM) - близько 20:00.<br>
+                                Індивідуальний трансфер під кожен рейс, без очікування інших учасників.<br>
+                            </p>
+                            <p class="mb-2"><strong>Перша локація — Убуд:</strong></p>
+                            <p>Гості добираються до своєї першої локації — Убуда. Це неповторна культурна столиця острова, яка протягом століть приваблює творчих людей з усього світу. Тут панує атмосфера просвітлення, натхнення та здорового способу життя, що відчувається в кожному кафе, на уроках йоги та у ретрит-центрах серед мальовничих рисових терас.</p>
+                             <p class="mt-4"><strong>Готель:</strong> <a href="#hotel-anandadara" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline font-semibold internal-hotel-link">AnandaDara Ubud Resort & Spa</a></p>
+                             <div class="mt-4 p-4 bg-teал-50 rounded-lg">
+                                <h4 class="font-bold text-teal-800">Родзинка дня</h4>
+                                <p class="text-sm text-teal-700 mt-2">Турбота з перших кроків<br>Як тільки гості виходять із зали прильоту - вже бачать нашу команду, яка зустрічає їх. Посмішка, табличка з ім'ями, допомога з багажем. Не важливо, прилетіли вони разом чи різними рейсами — у кожного буде свій комфортний трансфер.
+                                    <br>💫 З перших хвилин туру гості відчувають: про них піклуються.</p>
+                            </div>
+
+                            <!-- НОВА ГАЛЕРЕЯ ДЛЯ ДНЯ 1 -->
+<div class="gallery-container relative w-full aspect-video my-4 rounded-lg overflow-hidden" data-gallery-id="day1">
+    
+    <!-- Слайди з фотографіями -->
+    <div class="gallery-slides">
+        <!-- Фото 1 -->
+        <div class="gallery-slide absolute w-full h-full opacity-100">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658774/tourdone-day-1-hagurahrai-airopot-t_rqq2ly.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 2 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658773/tourdone-bali-day1-bali-hi-cruise_zwmsty.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 3 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658773/tourdone-day-1-anadara-t_k6jc4f.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 4 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658775/tourdone-day-1-anadara-ubud-bali-pull-jangl_lo5qia.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 5 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658774/tourdone-day-1-ubd-palace-t_rpo9k7.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 6 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658774/tourdone-day-ubud-pasar_farxm3.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+    </div>
+
+        
+    </div>
+                <!-- Блок з точками тепер знаходиться ПІСЛЯ контейнера галереї -->
+        <div class="gallery-dots flex justify-center space-x-3 pt-3">
+            <button class="gallery-dot active w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+        </div>
+                            <div class="mt-4 pt-4 border-t border-gray-300 text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="День 1: Прибуття на Балі. Трансфер в культурне серце острова — Убуд. Поселення в розкішний готель AnandaDara Ubud Resort & Spa для відпочинку та акліматизації серед тропічної зелені.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- День 2 -->
+                    <div class="bg-white/80 backdrop-blur-md text-gray-800 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 transition">
+                            <span class="font-semibold text-lg text-gray-800">День 2: Рисові тераси та духовні практики</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-700">
+        <div>
+            <p class="mb-4">
+                <strong>УБУД</strong><br>Виїзд о 9:00<strong><br><br>Рисові тераси та церемонії<br><br>
+                Після сніданку-знайомства гості відвідають найпопулярніші місця Убуда.</strong>
+                <br>Вранці за сніданком гості знайомляться ближче один з одним, обговорюють плани на тур і неквапливо насолоджуються їжею: чіа-пудинги, смузі-боули і боули з тунцем не залишать байдужим нікого.
+                <br>Далі на гостей чекають рисові тераси, легкий трекінг, розповідь як росте і як збирають рис, і незабутні інста-фото.
+                <br>Найсміливіші зможуть покататися на гойдалках на вершині терас.
+                <br>Далі — гості здійснять спеціальний ритуал "Мелукіт" під керівництвом Брахмана в одному з найдавніших і шанованих НЕТУРИСТИЧНИХ храмів Балі.
+            </p>
+            <p class="mt-4"><strong>Готель:</strong>
+                <a href="#hotel-anandadara" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline font-semibold internal-hotel-link">AnandaDara Ubud Resort & Spa</a>
+            </p>
+            <div class="mt-4 p-4 bg-teal-50 rounded-lg">
+                <h4 class="font-bold text-teal-800">Родзинка дня</h4>
+                <p class="text-sm text-teal-700 mt-2">
+                    🔱 Священний обряд Мелукат<br><br>
+                    Перше знайомство з Балі — це не екскурсія, а благословення.
+                    В індуїстському храмі брахман проводить для гостей <strong>ритуал очищення Мелукат</strong>.<br>
+                    Свята вода омиває, на руку пов'язується священна нитка, на лоб наноситься рис — знак захисту і прийняття.<br>
+                    💫 Це відчувається як «вхідний квиток» на острів, після якого Балі розкривається по-справжньому.
+                </p>
+            </div>
+                            <!-- НОВА ГАЛЕРЕЯ ДЛЯ ДНЯ 2 -->
+<div class="gallery-container relative w-full aspect-video my-4 rounded-lg overflow-hidden" data-gallery-id="day2">
+    
+    <!-- Слайди з фотографіями -->
+    <div class="gallery-slides">
+        <!-- Фото 1 -->
+        <div class="gallery-slide absolute w-full h-full opacity-100">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658822/tourdone-day-2-tegallang-t_kb1lpr.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 2 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658819/tourdone-day-2-swing-rise-terase-tegagalng-morming_pipfpw.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 3 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658818/tourdone-day-2-pura-tirta-empul-t_ieexxk.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 4 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658818/tourdone-day-2-purameningenit_swzjnh.webp" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 5 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658822/tourdone-day-2-ubud-market-t_n0y3sq.webp" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 6 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658824/tourdone-day-2-ubud-race-fild-sanset_uvulgq.webp" class="w-full h-full object-cover">
+        </div>
+    </div>
+</div>
+        <!-- Блок з точками тепер знаходиться ПІСЛЯ контейнера галереї -->
+        <div class="gallery-dots flex justify-center space-x-3 pt-3">
+            <button class="gallery-dot active w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+        </div>
+                            <div class="mt-4 pt-4 border-t border-gray-300 text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="День 2: Занурення в магію Убуду. Ритуал очищення в храмі Тірта Емпул, захоплюючі краєвиди рисових терас Тегаллаланг, відвідування Королівського палацу та знайомство з милими мешканцями Лісу Мавп.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                    <!-- День 3 -->
+                    <div class="bg-white/80 backdrop-blur-md text-gray-800 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 transition">
+                            <span class="font-semibold text-lg text-gray-800">День 3: Світанок та сходження на вулкан Батур </span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-700">
+   <div>
+    <p class="mb-4"><strong>УБУД</strong><br>Виїзд о 4:30<br>Ранній виїзд<strong><br><br>Сьогодні учасники здійснять сходження на вулкан Батур!</strong> <br>🌋 Підйом до вершини займе близько 2 годин. Від усвідомлення того, що під ногами знаходиться справжня стихія, захоплює дух. Цю пригоду гості ніколи не забудуть! Ранковий туман розсіюється - озеро та кальдера вулкану як на долоні. <br>Після сходження гості поїдуть на джипах до гарячих джерел з видом на вулкан.
+
+<br>☕️ На зворотному шляху гості заїдуть на кавову плантацію, де скуштують свіжі чаї та каву, вирощені прямо тут, і отримають можливість спробувати знамениту каву Лувак — найдорожчу каву у світі!
+<br>Після обіду на гостей чекає двогодинна спа-програма в одному з кращих спа-комплексів на Балі, серед рисових полів. За словами учасників попередніх турів, усі масажі, які вони мали до цього дня, не йдуть ні в яке порівняння.</p>
+<p class="mt-4"><strong>Готель:</strong> <a href="#hotel-anandadara" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline font-semibold internal-hotel-link">AnandaDara Ubud Resort & Spa</a></p>
+     <div class="mt-4 p-4 bg-teal-50 rounded-lg">
+        <h4 class="font-bold text-teal-800">Родзинка дня</h4>
+        <p class="text-sm text-teal-700 mt-2">Раннім ранком гості зустрічають світанок на вулкані Батур. Перші промені сонця забарвлюють хмари, а під ногами тремтить жива земля.
+Після відпочинку в готелі — вечірня магія SPA: де 120 хвилин балійського масажу перетворюють втому на легкість.
+<br>💫 Контраст сили стихії і повного розслаблення робить цей день особливим.</p>
+    </div>
+
+                            <!-- НОВА ГАЛЕРЕЯ ДЛЯ ДНЯ 3 -->
+<div class="gallery-container relative w-full aspect-video my-4 rounded-lg overflow-hidden" data-gallery-id="day3">
+    
+    <!-- Слайди з фотографіями -->
+    <div class="gallery-slides">
+        <!-- Фото 1 -->
+        <div class="gallery-slide absolute w-full h-full opacity-100">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658884/tourdone-day-3-sanrise-vulkano-batur-kintamani-t_sko5to.webp" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 2 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658881/tourdone-day-3-kintamani-batur-manky-senrasi_fovzf0.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 3 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658879/tourdone-day-3-hot-srings-batur-lake-t_gfxcom.webp" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 4 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658886/tourdone-day-3-vulkano-batur-kintamani-jeep-tour_bru0dv.webp" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 5 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658879/tourdone-day-3-degustation-coffe-plantation-t_tgawyj.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 6 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658883/tourdone-day-3-kintamani-day-bulkano-batur-viev_gutajj.webp" class="w-full h-full object-cover">
+        </div>
+    </div>
+</div>
+        <!-- Блок з точками тепер знаходиться ПІСЛЯ контейнера галереї -->
+        <div class="gallery-dots flex justify-center space-x-3 pt-3">
+            <button class="gallery-dot active w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+        </div>
+                            <div class="mt-4 pt-4 border-t border-gray-300 text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="День 3: Переїзд до Кінтамані. Дорогою насолоджуємося красою водоспаду Канто Лампо, дегустуємо каву на місцевих плантаціях та заселяємось у готель Toya Devasya з термальними джерелами.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- День 4 -->
+                    <div class="bg-white/80 backdrop-blur-md text-gray-800 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 transition">
+                            <span class="font-semibold text-lg text-gray-800">День 4: День розслаблення і медитації</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-700">
+                            <div>
+                            <p class="mb-4"><strong>УБУД</strong><br>Вільний графік<strong><br><br>День відпочинку</strong><br>
+
+🧘 Вранці у гостей буде клас йоги і медитації (можуть бути також і цвяхи).<br>
+
+    Потім група нікуди не поспішає і смачно снідає. <br>
+    А потім гості вирушають у піший тур по Убуду, під час якого відвідають майстер-клас з виготовлення срібних прикрас, де кожен зможе створити унікальний предмет на пам'ять.<br>
+    (За бажанням і попереднім записом. Оплата не входить у тур).
+
+<br><br>🍴 Гості пообідають у дуже стильному веганському ресторані.<br><br>🎶Після обіду вони вирушать до храму звуку, де в справжніх пірамідах пройдуть Гонг-медитацію.</p>
+        <p class="mt-4"><strong>Готель:</strong> <a href="#hotel-anandadara" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline font-semibold internal-hotel-link">AnandaDara Ubud Resort & Spa</a></p>
+        <div class="mt-4 p-4 bg-teal-50 rounded-lg">
+            <h4 class="font-bold text-teal-800">Родзинка дня</h4>
+            <p class="text-sm text-teal-700 mt-2">Цілий день — для відпочинку і відновлення.
+
+ Вранці — йога і медитація: дихання вирівнюється, думки стають спокійними, тіло оживає.
+ <br>Ввечері — саундхіллінг: вібрації гонгів і чаш створюють звукову подорож, яка переносить за межі звичайного сприйняття.
+
+<br>💫 Поєднання практик тіла і звуку дає неймовірне відчуття гармонії, яке залишиться з гостями надовго.</p>
+                            </div>
+                            <!-- НОВА ГАЛЕРЕЯ ДЛЯ ДНЯ 4 -->
+<div class="gallery-container relative w-full aspect-video my-4 rounded-lg overflow-hidden" data-gallery-id="day4">
+    
+    <!-- Слайди з фотографіями -->
+    <div class="gallery-slides">
+        <!-- Фото 1 -->
+        <div class="gallery-slide absolute w-full h-full opacity-100">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658932/tourdone-day-4-bali-ubud-anadara-hotel-yoga-morning_zidgng.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 2 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658937/tourdone-day-4-master-klass-silver-t_ta3jsg.webp" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 3 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658934/tourdone-day-4-bali-ubud-vegan-restoran-alchemy-coces_fkk6sh.webp" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 4 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658939/tourdone-day-4-ubud-alchemy-balivegan-restoran-t_haknpw.webp" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 5 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658930/tourdone-day-4-bali-ubud-anadara-hotel-upacara-relaks_qow27c.webp" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 6 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757658941/tourdone-dqy-4-piramida-chi-ubud-soundehiling-relaks-t_viiqpu.webp" class="w-full h-full object-cover">
+        </div>
+    </div>
+</div>
+        <!-- Блок з точками тепер знаходиться ПІСЛЯ контейнера галереї -->
+        <div class="gallery-dots flex justify-center space-x-3 pt-3">
+            <button class="gallery-dot active w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+        </div>
+                            <div class="mt-4 pt-4 border-t border-gray-300 text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="День 4: Незабутній світанок на вершині вулкану Батур. Після цього відвідуємо величний храмовий комплекс Бесакіх та мальовничий водний палац Тірта Гангга.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- День 5 -->
+                    <div class="bg-white/80 backdrop-blur-md text-gray-800 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 transition">
+                            <span class="font-semibold text-lg text-gray-800">День 5: Водоспади  Священе озеро та ліс мавп</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-700">
+                             <div>
+                            <p class="mb-4"><strong>УБУД - САНУР</strong><br>Виїзд о 4:30<br>Ранній виїзд<strong><br><br>Сьогодні гості залишають Убуд і переїжджають у Санур.</strong> <br>Трансфер не буде нудним! Гості зустрінуть світанок в одному з наймагічніших і найзагадковіших місць Балі.<br> Вони відвідають храм Улан Дану на Священному озері Братан, <br>а також побувають одразу на 4 дуже красивих і абсолютно різних водоспадах, які розташовані на одній локації!
+<br>Гості відвідають ліс мавп, де їх чекатимуть дуже дружні мавпочки, з якими можна зробити милі фото.
+<br>Закінчать подорож у новому готелі.</p>
+            <p class="mt-4"><strong>Готель:</strong> <a href="#hotel-balibeach" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline font-semibold internal-hotel-link">Bali Beach Sanur</a></p>
+            <div class="mt-4 p-4 bg-teal-50 rounded-lg">
+                <h4 class="font-bold text-teal-800">Родзинка дня</h4>
+                <p class="text-sm text-teal-700 mt-2">Чарівний світанок у одному з наймістичніших місць Балі.
+<br>Цього дня гості немов бачать усі водоспади Балі відразу. Кожен різний — потужний, ніжний, прихований, прозорий.
+Поїздка на мото-таксі крізь джунглі додає адреналіну — емоції, які згадуються роками.
+<br>💫 Це не просто екскурсія, а пригода, яка відкриває справжній Балі.</p>
+                            </div>
+                            <!-- НОВА ГАЛЕРЕЯ ДЛЯ ДНЯ 5 -->
+<div class="gallery-container relative w-full aspect-video my-4 rounded-lg overflow-hidden" data-gallery-id="day5">
+    
+    <!-- Слайди з фотографіями -->
+    <div class="gallery-slides">
+        <!-- Фото 1 -->
+        <div class="gallery-slide absolute w-full h-full opacity-100">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748008/tourdone-day-5-day_5_pura-ulan-danu-bratanlake-bedugul-upacara_t__w0h8e8.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 2 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748009/tourdone-day-5-day5_sangen-mankyforest-manky-ubud_lqeejy.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 3 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748008/tourdone-day-5-day_5_waterfoll-bania-mana-bratan-bedugul_t__fwqixk.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 4 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757750023/tourdone-day-5-chocolate-factory-bali_y4kfm2.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 5 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748008/tourdone-day-5-day_5_sangenmankyforest-manky-mankyforest-ubed-tour_t__tmioy7.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 6 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748008/tourdone-day-5-day_5_sanur-biach-hotel_h3yzzn.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+    </div>
+</div>
+        <!-- Блок з точками тепер знаходиться ПІСЛЯ контейнера галереї -->
+        <div class="gallery-dots flex justify-center space-x-3 pt-3">
+            <button class="gallery-dot active w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+        </div>
+                             <div class="mt-4 pt-4 border-t border-gray-300 text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="День 5: День пригод на півночі Балі! Підкорення величних водоспадів Секумпул та Алінг-Алінг, де найсміливіші зможуть стрибнути у воду зі скель.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- День 6 -->
+                    <div class="bg-white/80 backdrop-blur-md text-gray-800 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 transition">
+                            <span class="font-semibold text-lg text-gray-800">День 6: Нуса-Пеніда: блакитні лагуни та величні скелі</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-700">
+                            <div>
+                            <p class="mb-4"><strong>САНУР</strong><br>Виїзд о 7:45<br><strong><br>Ненадовго гості залишають Балі — їдуть на острів Нуса-Пеніда!</strong><br>Вранці після сніданку гості вирушають до порту, який знаходиться в пішій доступності від їхнього готелю. На швидкісному човні вже через 40 хвилин вони опиняться на сусідньому острові, який ніби застряг у часовій петлі. Нуса-Пеніда — це Балі 20 років тому.
+            Гості відвідають пляжі:
+            </p>
+            <ul class="list-checkmark text-gray-700 mb-4">
+                <li>💙 Angel’s Billabong — природний басейн-інфініті.</li>
+                <li>💔 Broken Beach — арка над океаном.</li>
+                <li>🦖 Kelingking Beach — скеля-динозавр.</li>
+                <li>💎 Crystal Bay — пляж із прозорою водою, де можна поплавати з маскою і побачити корали.</li>
+            </ul>
+            <p class="mb-4">
+                Після відвідування пляжу Kelingking Beach у гостей буде ланч, який входить у вартість туру.<br>
+                На них чекатимуть пейзажі неймовірної краси, які сьогодні стали візитівкою острова Балі. <br>
+                Увечері на швидкісному катері гості повернуться у свій готель у Санурі.<br>
+            </p>
+            <p class="mt-4"><strong>Готель:</strong> <a href="#hotel-balibeach" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline font-semibold internal-hotel-link">Bali Beach Sanur</a></p>
+            <div class="mt-4 p-4 bg-teal-50 rounded-lg">
+                <h4 class="font-bold text-teal-800">Родзинка дня</h4>
+                <p class="text-sm text-teal-700 mt-2">🚤 Жити в Санурі — означає бути за крок від порту. Ніяких підйомів о 5 ранку, ніяких ланч-боксів замість сніданку.<br>
+                Гості спокійно снідають і всього за 10 хвилин пішки опиняються біля катера на Нуса-Пеніду.<br>
+                💫 Зручність, яка перетворює день на задоволення.</p>
+                            </div>
+                            <!-- НОВА ГАЛЕРЕЯ ДЛЯ ДНЯ 6 -->
+<div class="gallery-container relative w-full aspect-video my-4 rounded-lg overflow-hidden" data-gallery-id="day6">
+    
+    <!-- Слайди з фотографіями -->
+    <div class="gallery-slides">
+        <!-- Фото 1 -->
+        <div class="gallery-slide absolute w-full h-full opacity-100">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757678632/tourdone-day-6-port-sanur-spidboot-nusa-penida-t_fcyxhm.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 2 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757678623/tourdone-day-6-nusa-penida-klinking-tireks-manky_fyltzm.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 3 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757678622/tourdone-day-6-brokin-beach-nusa-penida-instapoint-t_obrvu2.webp" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 4 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757894909/tourdone-day-6-nusa-penida-brokin-beach-arka_i7zka4.webp" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 5 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757678629/tourdone-day-6-nusa-penida-tireks-klingkin-instapoint-t_qsobva.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 6 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757678626/tourdone-day-6-nusa-penida-sanur-port-spidebot_gi4qfy.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+    </div>
+</div>
+        <!-- Блок з точками тепер знаходиться ПІСЛЯ контейнера галереї -->
+        <div class="gallery-dots flex justify-center space-x-3 pt-3">
+            <button class="gallery-dot active w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+        </div>
+                             <div class="mt-4 pt-4 border-t border-gray-300 text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="День 6: Подорож до іконічних місць Балі. Фото біля містичних воріт Хандара, відвідування храму на воді Улун Дану та загадкового покинутого готелю. Переїзд на південь для пляжного відпочинку.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- День 7 -->
+                    <div class="bg-white/80 backdrop-blur-md text-gray-800 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 transition">
+                            <span class="font-semibold text-lg text-gray-800">День 7: День відпочінку на пляжі та опції на вибір</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-700">
+                            <div>
+                            <p class="mb-4"><strong>САНУР</strong><br>Вільний графік<strong><br><br>Цей день — для насолоди океаном і відпочинку.</strong>
+
+<br>Вільний день гості можуть провести на свій вибір:
+<br><br>🏖️ на пляжі
+<br>🛍️ зайнятися шопінгом
+<br>🪴 дізнатися про місцеву медицину Джаму
+<br>🛁 відвідати СПА
+<br>🚁 політати на вертольоті або параплані
+
+<br><br>Після обіду за бажанням може бути організована поїздка в біч-клуб 💃🏾 EL Kabron, де гості зможуть спостерігати за заходом сонця з басейну під музику DJ.
+<br>(Не входить у пакет. Депозит 30$)</p>
+            <p class="mt-4"><strong>Готель:</strong> <a href="#hotel-balibeach" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline font-semibold internal-hotel-link">Bali Beach Sanur</a></p>
+            <div class="mt-4 p-4 bg-teal-50 rounded-lg">
+                <h4 class="font-bold text-teal-800">Родзинка дня</h4>
+                <p class="text-sm text-teal-700 mt-2">😎 Свобода вибору
+
+<br>Програма не заповнена вщент. Цей день — для гостей. Хочуть екстриму — рафтинг. Хочуть екзотики — слони. Хочуть релаксу — пляж.
+
+<br>💫 Мета — дати гостям відчуття свободи, адже найкращий відпочинок — це той, який відповідає їхньому настрою.</p>
+                            </div>
+                            <!-- НОВА ГАЛЕРЕЯ ДЛЯ ДНЯ 7 -->
+<div class="gallery-container relative w-full aspect-video my-4 rounded-lg overflow-hidden" data-gallery-id="day7">
+    
+    <!-- Слайди з фотографіями -->
+    <div class="gallery-slides">
+        <!-- Фото 1 -->
+        <div class="gallery-slide absolute w-full h-full opacity-100">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748112/tourdone-day-7-day_7_sanur-hotel-hetibalibeachsanur-balibeachhotel-rombalibeachhotal-rammhotel_t__sycl57.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 2 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748117/tourdone-day-7-day_7_sanur-sarase-beach_pnwf3m.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 3 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748114/tourdone-day-7-day_7_bali-medicine-djamu-helhse-vegan-_t__dhzmzi.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 4 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748115/tourdone-day-7-day_7_upacara-hindu-kulture-balipeople-spiritual_gs6nw1.webp" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 5 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748118/tourdone-day-7-day_7_sanur-relacs-shopung-balimoll-shopingmall-baliaicon_t__vhnb3o.webp" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 6 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748113/tourdone-day-7-day_7_sanurbalibeachhotal-balibieachhotel-balibeach-frontbalireach_r5qxef.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+    </div>
+</div>
+        <!-- Блок з точками тепер знаходиться ПІСЛЯ контейнера галереї -->
+        <div class="gallery-dots flex justify-center space-x-3 pt-3">
+            <button class="gallery-dot active w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+        </div>
+                            <div class="mt-4 pt-4 border-t border-gray-300 text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="День 7: Райський день на півдні Балі! Відвідування інстаграмних пляжів Паданг-Паданг, Грін Боул та Меласті. Завершуємо день романтичною вечерею зі свіжими морепродуктами на пляжі Джимбаран.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- День 8 -->
+                    <div class="bg-white/80 backdrop-blur-md text-gray-800 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                        <button class="accordion-button w-full flex justify-between items-center text-left p-5 transition">
+                            <span class="font-semibold text-lg text-gray-800">День 8: Балійський будинок і стародавні ремесла</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-700">
+                            <div>
+                            <p class="mb-4"><strong>САНУР - НУСА ДУА</strong><br>Виїзд о 10:00<strong><br><br>Сьогодні гості переїжджають до Нуса-Дуа — елітного району і кінцевої точки подорожі.</strong>
+
+<br>Трансфер буде цікавим!
+<br>Гості вирушать на оглядову екскурсію, під час якої побачать справжній балійський будинок, а також відвідають ремісниче селище Мас, у якому до наших днів збереглися стародавні ремесла.
+<br><br>Вони завітають у галереї срібла та батика, де зможуть побачити процес виробництва.
+Прибувши в найпрестижніший район острова Нуса-Дуа, гості заселяться у готель Ayodya Resort Bali.
+Після заселення вони зможуть насолодитися прекрасним пляжем, скористатися всіма послугами готелю або самостійно відправитися в Bali Collection — стильний торгово-туристичний центр у Нуса-Дуа, де розкішний шопінг і розваги поєднуються з неповторною балійською атмосферою.</p>
+            <p class="mt-4"><strong>Готель:</strong> <a href="#hotel-ayodya" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline font-semibold internal-hotel-link">Ayodya Resort Bali</a></p>
+            <div class="mt-4 p-4 bg-teal-50 rounded-lg">
+                <h4 class="font-bold text-teal-800">Родзинка дня</h4>
+                <p class="text-sm text-teal-700 mt-2">🌅 Під час відвідування балійського будинку гості відкривають для себе філософію балійського «фен-шуй» — систему вимірювань та будівництва Аста Коса Касалі.
+Кожен кут будинку побудований не випадково, а в гармонії з духами і природою.
+<br>💫 Це подорож у світ стародавньої мудрості, де архітектура стає мовою віри.</p>
+                            </div>
+                            <!-- НОВА ГАЛЕРЕЯ ДЛЯ ДНЯ 8 -->
+<div class="gallery-container relative w-full aspect-video my-4 rounded-lg overflow-hidden" data-gallery-id="day8">
+    
+    <!-- Слайди з фотографіями -->
+    <div class="gallery-slides">
+        <!-- Фото 1 -->
+        <div class="gallery-slide absolute w-full h-full opacity-100">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757751606/tourdone-day-8-galery-silver-usgaleryt_ocgen3.png" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 2 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748321/tourdone-day-8-day_8_bali-batik-galery-shoping-painting_jiw35v.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 3 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748319/tourdone-day-8-day_8_ayodya-resort-bal-nosadua-bukit-_t_i_dkzrlp.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 4 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748325/tourdone-day-8-day_8_bali-collection-1024x729-1-balirentalcars-com_gigryg.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 5 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748316/tourdone-day-8-day_8_ayodya-resort-bal-nosadua-bukit-room_t_i_juyngz.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 6 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748318/tourdone-day-8-day_8_nosadua-itds-entrasnosadua-door-candibentar_locoea.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+    </div>
+</div>
+        <!-- Блок з точками тепер знаходиться ПІСЛЯ контейнера галереї -->
+        <div class="gallery-dots flex justify-center space-x-3 pt-3">
+            <button class="gallery-dot active w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+        </div>
+                            <div class="mt-4 pt-4 border-t border-gray-300 text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="День 8: Повний релакс! Вільний день у розкішному Ayodya Resort 5* в Нуса-Дуа. Час насолоджуватися сонцем, океаном та спокоєм.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- День 9 -->
+                    <div class="bg-white/80 backdrop-blur-md text-gray-800 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                         <button class="accordion-button w-full flex justify-between items-center text-left p-5 transition">
+                            <span class="font-semibold text-lg text-gray-800">День 9: Серфинг Храм Пура Улувату та фінальна вечеря</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-700">
+                            <div>
+                            <p class="mb-4"><strong>НУСА ДУА</strong><br>Згідно з розкладом*<strong><br><br>Останній повний день на Балі — для відпочинку.</strong><br>
+        Сьогодні день серфінгу! Перші спроби, перші падіння і перші успіхи — усе це чекає на гостей.<br>
+        З ними працюватимуть професійні інструктори, які подбають про безпеку і зроблять усе для того, щоб кожен став на хвилю.<br>
+        Якщо серфінг для когось занадто екстремальний, гості можуть відпочити в готелі або їм може бути організована поїздка в один із біч-клабів на острові Букіт, де можна чудово провести першу половину дня!<br>
+        Після обіду гості відвідають храм Пура Лухур Улувату. До недавнього часу він був закритий для більшості і його могли відвідувати лише місцеві вищі верстви населення. <br>
+        Храм знаходиться на скелях, які дивом не обсипаються. Тут можна буде поспостерігати за мавпами, які крадуть окуляри у туристів. <br>
+        Завершення дня — вечеря на пляжі Джимбаран зі свіжих морепродуктів. Цей пляж відомий одними з найкрасивіших заходів сонця на Балі. Уздовж пляжу немає інстаграмних кав'ярень — тільки місцеві варунги, де готують морепродукти, виловлені вранці.<br><br>
+        *Час початку заняття із серфінгу визначає інструктор напередодні.</p>
+            <p class="mt-4"><strong>Готель:</strong> <a href="#hotel-ayodya" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline font-semibold internal-hotel-link">Ayodya Resort Bali</a></p>
+            <div class="mt-4 p-4 bg-teal-50 rounded-lg">
+                <h4 class="font-bold text-teal-800">Родзинка дня</h4>
+                <p class="text-sm text-teal-700 mt-2">🥂 Атмосферне завершення. Захід сонця в Джимбарані, шум прибою, сміх друзів — ідеальний фінал подорожі!<br>
+                Фінальна вечеря — це не просто їжа, а можливість ще раз пережити всі емоції разом.<br>
+                💫 Атмосфера, де кожен учасник відчуває себе частиною великої пригоди, яка назавжди залишиться в пам’яті.</p>
+            
+            </div>
+                            
+                            <!-- НОВА ГАЛЕРЕЯ ДЛЯ ДНЯ 9 -->
+<div class="gallery-container relative w-full aspect-video my-4 rounded-lg overflow-hidden" data-gallery-id="day9">
+    
+    <!-- Слайди з фотографіями -->
+    <div class="gallery-slides">
+        <!-- Фото 1 -->
+        <div class="gallery-slide absolute w-full h-full opacity-100">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748347/tourdone-day-9-day_9_balisurf-surfing-gerl-beach-uluwatu_tnccxl.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 2 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748353/tourdone-day-9-day_9_bukit-melastibeach-melasti-beach-uluwatu_t__kgo9rf.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 3 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748351/tourdone-day-9-day_9_nusa-dua-serfing-bord-beach-aktiviti_oprno5.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 4 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748354/tourdone-day-9-day_9_pura-luhur-uluwatu-bukit-uluwatu-uoacara-spirituals-sansetpurauluwatu_t__ect4t2.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 5 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748348/tourdone-day-9-day_9_pura-luhur-uluwatu-bukit-uluwatu-uoacara-spirituals-sansetpurauluwatu_z8h1ui.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 6 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748350/tourdone-day-9-day_9_djimbaran-evning-eat-ocean-seafood_t__ozjzjl.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+    </div>
+</div>
+        <!-- Блок з точками тепер знаходиться ПІСЛЯ контейнера галереї -->
+        <div class="gallery-dots flex justify-center space-x-3 pt-3">
+            <button class="gallery-dot active w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+        </div>
+                            <div class="mt-4 pt-4 border-t border-gray-300 text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="День 9: Магія Улувату. Відвідування парку GWK з гігантською статуєю Гаруди, а потім — неймовірний захід сонця над океаном біля храму Улувату під звуки містичного танцю Кечак.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- День 10 -->
+                    <div class="bg-white/80 backdrop-blur-md text-gray-800 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                         <button class="accordion-button w-full flex justify-between items-center text-left p-5 transition">
+                            <span class="font-semibold text-lg text-gray-800">День 10: Прощання з Балі</span>
+                            <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                        </button>
+                        <div class="accordion-content px-5 text-gray-700">
+                            <div>
+                            <p class="mb-4"><strong>НУСА ДУА</strong><br>Вільний графік<strong><br><br>Останній день туру гості проведуть у своєму готелі.</strong>
+
+<br>Вони можуть поніжитися в океані, насолодитися всіма послугами готелю.
+<br>Трансфери в аеропорт будуть організовані відповідно до індивідуального часу вильоту кожного гостя.</p>
+            <p class="mt-4"><strong>Готель:</strong> <a href="#hotel-ayodya" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:underline font-semibold internal-hotel-link">Ayodya Resort Bali</a></p>
+            <div class="mt-4 p-4 bg-teal-50 rounded-lg">
+                <h4 class="font-bold text-teal-800">Родзинка дня</h4>
+                <p class="text-sm text-teal-700 mt-2"> 🎁 Прощальні подарунки
+
+<br>У кожного гостя свій трансфер у зручний час.
+<br>Перед від'їздом — сувеніри від команди, щоб шматочок Балі поїхав разом із ними.
+<br>💫 Тур завершується не прощанням, а обіцянкою повернутися.</p>
+                            </div>
+                            <!-- НОВА ГАЛЕРЕЯ ДЛЯ ДНЯ 10 -->
+<div class="gallery-container relative w-full aspect-video my-4 rounded-lg overflow-hidden" data-gallery-id="day10">
+    
+    <!-- Слайди з фотографіями -->
+    <div class="gallery-slides">
+        <!-- Фото 1 -->
+        <div class="gallery-slide absolute w-full h-full opacity-100">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748380/tourdone-day-10-day_10_ayodya-resort-bal-nosadua-bukit-_t_i_l6igal.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 2 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748382/tourdone-day-10-day_10_bali-suring-ocean-bukit-uluwatu_ztlb0t.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 3 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748387/tourdone-day-10-day_10_nosadua-bukit-hotels-itds_t__f69yjd.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 4 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748383/tourdone-day-10-day_10_beach-waive-bali-melasti-uluwatu-bukit_nxga8x.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 5 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748388/tourdone-day-10-day_10_nosadua-bukit-hotels-itds-gardenohope_t__mf4j0b.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+        <!-- Фото 6 -->
+        <div class="gallery-slide absolute w-full h-full opacity-0">
+            <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757748385/tourdone-day-10-day_10_nosadua-bukit-entres-waterboom_gu2klw.webp" alt="Фотографія туру День 1" class="w-full h-full object-cover">
+        </div>
+    </div>
+</div>
+        <!-- Блок з точками тепер знаходиться ПІСЛЯ контейнера галереї -->
+        <div class="gallery-dots flex justify-center space-x-3 pt-3">
+            <button class="gallery-dot active w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+            <button class="gallery-dot w-2 h-2 sm:w-3 sm:h-3 bg-gray-400 rounded-full transition"></button>
+        </div>
+                            <div class="mt-4 pt-4 border-t border-gray-300 text-center">
+                                <button class="generate-post-btn bg-teal-100 text-teal-700 font-semibold py-2 px-4 rounded-lg hover:bg-teal-200 transition-colors text-sm" data-prompt-context="День 10: Прощання з райським островом. Останні години на Балі, час для купівлі сувенірів та спогадів перед вильотом додому.">
+                                    ✨ Згенерувати допис для соцмереж
+                                </button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Готелі -->
+        <section id="hotel_new" class="py-20 bg-transparent">
+    <div class="container mx-auto max-w-4xl px-6 bg-white/80 backdrop-blur-md text-gray-800 p-8 lg:p-12 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">Готелі які ми використовуємо в турі</h2>
+        <div class="max-w-3xl mx-auto text-left text-gray-600"> <!-- Я прибрав mb-10 звідси -->
+            <p class="mb-4"><strong>Ось три причини, чому ми обрали саме ці готелі:</strong>
+                    <br><br><strong>Ідеальна логістика </strong>
+                    <br>— кожен готель розташований так, щоб спростити програму: від адаптації в джунглях до зручного виходу в порт і фіналу на океанському пляжі.
+<br><strong>Комфорт і реновація</strong>
+    <br> — усі готелі оновлені й відповідають сучасним світовим стандартам, забезпечуючи якісний відпочинок.
+<br><strong>Унікальні особливості</strong>
+    <br> — глибокий пляж Ayodya, панорами з висотного Bali Beach і тиша AnandaDara роблять подорож особливою.</p>
+                 </div>
+    </div>
+    <div class="container mx-auto max-w-7xl px-6 mt-10">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div id="hotel-anandadara" class="bg-white/80 backdrop-blur-md rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)] overflow-hidden">
+                <a href="https://anandadara.com/" target="_blank" rel="noopener noreferrer" title="Дізнатись більше про готель AnandaDara в джунглях Убуду">
+                    <video autoplay loop muted playsinline preload="none" poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757433995/01_AnanDaraUbud_poster_tibppt.webp" class="w-full">
+                        <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757433699/01_AnanDaraUbud_720p_25fps_i2eerk.webm" type="video/webm">
+                        <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757433693/01_AnanDaraUbud_720p_25fps_kato0g.mp4" type="video/mp4">
+                        Ваш браузер не підтримує відео.
+                    </video>
+                </a>
+                    <!-- Hotel AnandaDara -->
+                <div class="p-5">
+                    <button class="accordion-button w-full flex justify-between items-center text-left text-gray-800 transition">
+                        <span class="font-semibold text-lg">AnandaDara</span>
+                        <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                    </button>
+                    <div class="accordion-content px-1 text-gray-700">
+                        <div>
+                        <p class="text-gray-600 mb-4">
+            <strong>Тривалість перебування:<br>
+            4 ночі</strong>
+        </p>
+                <p class="text-gray-600 mb-4">
+            <strong>✨ Чому саме:</strong><br>
+            🌿 Повне занурення в природу з перших хвилин на Балі.<br>
+            🛁 SPA і тропічний сад - ідеальне відновлення після перельоту.<br>
+            🧘🏼‍♀️ Атмосфера усамітнення та гармонії.
+        </p>
+                        <p class="text-gray-600">
+            <strong>Короткий опис:</strong><br>
+            🌿 У самому серці балійських джунглів, поруч з рисовими терасами та храмами Убуда, перебуває AnandaDara.<br>
+            Це місце створено для того, щоб сповільнитися, видихнути і відчути справжню атмосферу острова богів.<br>
+            Тут починаються перші дні туру — з йоги 🧘🏼‍♀️, медитації та відпочинку біля басейну з видом на зелені простори.
+        </p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div id="hotel-balibeach"class="bg-white/80 backdrop-blur-md rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)] overflow-hidden">
+                <a href="https://balibeachsanur.com/" target="_blank" rel="noopener noreferrer" title="Відкрити сайт розкішного пляжного готелю Ayodya Resort Bali">
+                    <video autoplay loop muted playsinline preload="none" poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757433998/02_BaliBich_poster_jgga6d.webp" class="w-full">
+                        <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757433693/02_BaliBich_720p_25fps_ru0v4y.webm" type="video/webm">
+                        <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757433694/02_BaliBich_720p_25fps_ghl2fe.mp4" type="video/mp4">
+                        Ваш браузер не підтримує відео.
+                    </video>
+                </a>
+                    <!-- Hotel Bali Beach -->
+                <div class="p-5">
+    <button class="accordion-button w-full flex justify-between items-center text-left text-gray-800 transition">
+        <span class="font-semibold text-lg">Bali Beach</span>
+        <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+    </button>
+    <div class="accordion-content px-1 text-gray-700">
+        <div>
+    
+        <!-- Блок 1: Тривалість -->
+        <p class="text-gray-600 mb-4">
+            <strong>Тривалість перебування:<br>
+            3 ночі</strong>
+            
+        </p>
+
+        <!-- Блок 2: Чому саме -->
+        <p class="text-gray-600 mb-4">
+            <strong>✨ Чому саме:</strong><br>
+            🆕 Абсолютно оновлений готель - свіжий дизайн і комфорт на найвищому рівні.<br>
+            🌅 Панорами океану прямо з номера.<br>
+            🛳️ Пішки до порту Санура - снідаємо і відразу вирушаємо на Нуса-Пеніду.<br>
+            🏖️ Один з найкращих пляжів острова - чистий, спокійний і завжди поруч..
+        </p>
+
+        <!-- Блок 3: Короткий опис -->
+        <p class="text-gray-600">
+            <strong>Короткий опис:</strong><br>
+            🏨 Легендарний і єдиний висотний готель на Балі, який у 2024 році пройшов повну реновацію і засяяв заново! <br>
+            Сьогодні він поєднує сучасні світові стандарти з традицією бездоганного сервісу.<br>
+            Тут ми бронюємо номери з видом на океан, переважно вище 4-го поверху — щоб кожен ранок починався з чарівного світанку над морем.
+        </p>
+        </div>
+    </div>
+</div>
+            </div>
+                     <!-- Ayodya Resort -->
+            <div id="hotel-ayodya" class="bg-white/80 backdrop-blur-md rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)] overflow-hidden">
+                 <a href="https://ayodyaresortbali.com/" target="_blank" rel="noopener noreferrer" title="Відкрити сайт розкішного пляжного готелю Ayodya Resort Bali">
+                    <video autoplay loop muted playsinline preload="none" poster="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757434002/03_Aoydia_poster_xoue1k.webp" class="w-full">
+                        <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757433695/03_Aoydia_720p_25fps_mnk582.webm" type="video/webm">
+                        <source src="https://res.cloudinary.com/dsheo9ktv/video/upload/v1757433695/03_Aoydia_720p_25fps_rxrds1.mp4" type="video/mp4">
+                        Ваш браузер не підтримує відео.
+                    </video>
+                </a>
+                <div class="p-5">
+                    <button class="accordion-button w-full flex justify-between items-center text-left text-gray-800 transition">
+                        <span class="font-semibold text-lg">Ayodya Resort</span>
+                        <span class="arrow text-teal-500 transform transition-transform"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></span>
+                    </button>
+                    <div class="accordion-content px-1 text-gray-700">
+                        <div>
+                        <p class="text-gray-600 mb-4">
+            <strong>Тривалість перебування:<br>
+            2 ночі</strong>
+        </p>
+                     <p class="text-gray-600 mb-4">
+            <strong>✨ Чому саме:</strong><br>
+            🆕 Реновація та бездоганний стан готелю.<br>
+            ⛱️ Найглибший пляж на Балі — купання в будь-який час доби.<br>
+            🏄‍♂️ Усе для активного відпочинку біля океану: серфінг, прогулянки і вечірні beach-clubs.
+        </p>
+                        <p class="text-gray-600">
+            <strong>Короткий опис:</strong><br>
+            Справжній палац біля океану в Нуса-Дуа! Ayodya Resort - це величезні сади, ставки з лотосами і архітектура, натхненна храмами Балі. Готель нещодавно оновлений і сьогодні перебуває в ідеальному стані - просторі номери, свіжі інтер'єри і першокласний сервіс.<br>
+            Головна особливість - ⛱️ пляж, на якому можна купатися навіть під час найсильнішого відливу. Це унікальна можливість для Балі!
+        </p>
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+        <div class="sticky-parent">
+             <div class="sticky-background">
+                 <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757602838/tourdone-bali-ulun-danu-temple-background_vba2gr.webp" alt="Бали фон 3" class="w-full h-full object-cover">
+            </div>
+            <div class="content-over-sticky">
+                
+                <!-- Система продажів -->
+<section id="sales" class="py-20 bg-transparent">
+    <div class="container mx-auto max-w-4xl px-6 bg-white/80 backdrop-blur-md text-gray-800 p-8 lg:p-12 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 section-title">Прозора та вигідна система продажів</h2>
+        <div class="tabs-component">
+            <!-- Кнопки табів (тепер 3 кнопки без номерів) -->
+            <div class="flex flex-wrap justify-center border-b border-gray-300 -mb-px">
+                <button class="tab-button active py-3 px-5 font-semibold text-gray-800 transition" data-tab="sales-booking">Бронювання та оплати</button>
+                <button class="tab-button py-3 px-5 font-semibold text-gray-500 hover:text-gray-800 transition" data-tab="sales-payments">Прямі оплати</button>
+                <button class="tab-button py-3 px-5 font-semibold text-gray-500 hover:text-gray-800 transition" data-tab="sales-bonuses">Підтримка та бонуси</button>
+            </div>
+            <!-- Контент табів -->
+            <div class="pt-8 text-gray-700 leading-relaxed">
+                <!-- Контент для "Бронювання та комісії" -->
+                <div id="sales-booking" class="tab-content active">
+                    <h3 class="text-xl font-bold text-teal-600 mb-2">Гнучка система бронювання та комісії</h3>
+                    <p class="mb-4"><strong>Агентська комісія становить від 15% — один із найкращих показників на ринку преміальних турів.</strong></p>
+                    <ul class="list-checkmark text-gray-700">
+                        <li>Жодних прихованих штрафів.</li>
+                        <li>Депозит лише 30% після підтвердження бронювання.</li>
+                        <li>Повна оплата — за 15 днів до початку туру.</li>
+                        <li>Додаткові бонуси для груп від 12 осіб.</li>
+                    </ul>
+                </div>
+                <!-- Контент для "Прямі оплати" -->
+                <div id="sales-payments" class="tab-content">
+                    <h3 class="text-xl font-bold text-teal-600 mb-2">Прямі оплати від клієнтів</h3>
+                    <p class="text-gray-700"><strong>Це підвищує довіру клієнтів — адже вони взаємодіють безпосередньо з туроператором на Балі.</strong>
+                        <br>Ваші клієнти можуть розраховуватись напряму з нами - через картки Visa/Mastercard, SWIFT або платіжні посилання.
+                        <br>Ми переказуємо Вам комісію окремо або зараховуємо її в рахунок майбутніх турів.
+                    </p>
+                </div>
+                <!-- Контент для "Підтримка та бонуси" -->
+                <div id="sales-bonuses" class="tab-content">
+                     <h3 class="text-xl font-bold text-teal-600 mb-2">Підтримка та матеріали</h3>
+                     <p class="text-gray-700 mb-6"><strong>Ми надаємо готові презентації, фото, відео та доступ до генератора постів. <br>
+                     Наші менеджери завжди на зв'язку для консультацій та оперативного бронювання.</strong>
+                        
+                          </p>
+                         
+                     <h3 class="text-xl font-bold text-teal-600 mb-2">Бонуси для супроводжуючих від агентів</h3>
+                     <ul class="list-checkmark text-gray-700">
+                        <li>Безкоштовна участь супроводжуючого при повній групі (10 гостей).</li>
+                        <li>Фантріп — для агентств, які продають від 3 повних турів за сезон.</li>
+                        <li>Можливість індивідуального тарифу для VIP-клієнтів — за окремим запитом.</li>
+                        <li>Ми завжди йдемо назустріч і готові адаптувати формат співпраці під Ваші потреби.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                
+                <section id="contact" class="py-20 bg-transparent">
+                     <div class="container mx-auto max-w-4xl px-6 bg-white/80 backdrop-blur-md text-gray-800 p-8 lg:p-12 rounded-2xl shadow-[5px_25px_50px_-12px_rgba(0,0,0,0.5)]">
+                        <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Готові запропонувати вашим клієнтам найкраще?</h2>
+                        <p class="max-w-2xl mx-auto mb-8">Зв'яжіться з нами, щоб отримати повну версію програми з цінами, детальні умови співпраці та доступ до маркетингових матеріалів.</p>
+                        <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-2xl text-gray-800">
+                            <h3 class="text-2xl font-bold mb-6">Стати партнером</h3>
+                            
+                            <form id="contact-form" action="https://formspree.io/f/mpwjbzad" method="POST">
+                                <div class="mb-4">
+                                    <input type="text" placeholder="Ваше ім'я" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" name="Ім'я">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="text" placeholder="Назва агентства" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" name="Агентство">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="email" placeholder="Email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" name="Email">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="text" placeholder="WhatsApp" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" name="WhatsApp">
+                                </div>
+                                <div class="mb-4">
+                                    <input type="text" placeholder="Telegram" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500" name="Telegram">
+                                </div>
+                                <button type="submit" class="w-full bg-teal-500 text-white font-bold py-3 px-6 rounded-md hover:bg-teal-600 transition-colors">Надіслати заявку</button>
+                                
+                                <div id="form-status" class="mt-4 text-center font-semibold"></div>
+                            </form>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Gemini API Modal -->
+        <div id="gemini-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+            <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl transform transition-all duration-300 scale-95 opacity-0" id="modal-content">
+                <div class="p-6">
+                    <div class="flex justify-between items-center border-b pb-3 mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800">✨ Ваш допис для соцмереж</h3>
+                        <button id="close-modal-btn" class="text-gray-400 hover:text-gray-600 text-3xl leading-none">&times;</button>
+                    </div>
+                    <div id="modal-body">
+                        <!-- Loader -->
+                        <div id="loader" class="flex flex-col items-center justify-center py-10">
+                            <svg class="animate-spin h-8 w-8 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                            <p class="mt-4 text-gray-600">Магія Балі твориться... Генеруємо текст...</p>
+                        </div>
+                        <!-- Result -->
+                        <div id="gemini-result" class="hidden">
+                            <textarea id="result-textarea" readonly class="w-full h-48 p-3 border rounded-md bg-gray-50 text-gray-700 resize-none focus:outline-none focus:ring-2 focus:ring-teal-500"></textarea>
+                        </div>
+                    </div>
+                    <div id="modal-footer" class="mt-6 text-right hidden">
+                        <button id="copy-text-btn" class="bg-teal-500 text-white font-bold py-2 px-4 rounded-md hover:bg-teal-600 transition-colors">Копіювати текст</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-6 text-center flex flex-col items-center">
+        
+        <!-- Блок 1: Іконки (з нижнім відступом mb-6) -->
+        <div class="flex justify-center items-center space-x-6 mb-6">
+            
+            <!-- Сайт -->
+        <a href="https://tourdone.com" target="_blank" class="text-gray-400 hover:opacity-80 transition" title="Наш сайт">
+                <img src="https://res.cloudinary.com/dsheo9ktv/image/upload/v1757565655/tourdone-logo-bali-travel-150_o9ejnl.webp" alt="Логотип Tourdone" class="w-6 h-6">
+            </a>
+            <!-- WhatsApp -->
+        <a href="https://wa.me/628113893814" target="_blank" class="text-gray-400 hover:text-teal-400 transition" title="Написати у WhatsApp">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+            </a>
+
+        <!-- Telegram -->
+        <a href="https://t.me/Glebmotorace" target="_blank" class="text-gray-400 hover:text-teal-400 transition" title="Написати у Telegram">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+            </a>
+
+            <!-- Email -->
+        <a href="mailto:glebmotorace@gmail.com" class="text-gray-400 hover:text-teal-400 transition" title="Написати на Email">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </a>
+            
+        </div>
+        
+        <!-- Блок 2: Текст копірайту -->
+        <p>&copy; 2025 Ексклюзивні тури на Балі. Всі права захищено.</p>
+        
+    </div>
+</footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            window.scrollTo(0, 0);
+            // НОВИЙ СКРИПТ ДЛЯ БОКОВОГО МОБІЛЬНОГО МЕНЮ
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenuContainer = document.getElementById('mobile-menu-container');
+const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+const mobileMenuLinks = document.querySelectorAll('#mobile-menu-panel a'); // Знаходимо всі посилання в меню
+
+function openMenu() {
+    document.body.classList.add('menu-open');
+}
+
+function closeMenu() {
+    document.body.classList.remove('menu-open');
+}
+
+if (menuBtn) {
+    menuBtn.addEventListener('click', openMenu);
+}
+if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', closeMenu);
+}
+
+// Закриваємо меню при кліку на будь-яке посилання всередині нього
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+            // СКРИПТ ДЛЯ ПРОКРУТКИ НАГОРУ ТА ЗАКРИТТЯ ВСІХ АКОРДЕОНІВ
+            const logoLink = document.getElementById('logo-link');
+
+            if (logoLink) {
+                logoLink.addEventListener('click', function(event) {
+                    // 1. Запобігаємо стандартному "стрибку" по посиланню #
+                    event.preventDefault();
+
+                    // 2. Плавно прокручуємо сторінку на самий верх
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                    // 3. Знаходимо ВСІ кнопки акордеонів, які зараз відкриті (мають клас 'active')
+                    const allActiveAccordionButtons = document.querySelectorAll('.accordion-button.active');
+                    
+                    // 4. Проходимося по кожній і прибираємо клас 'active', щоб вони закрилися
+                    allActiveAccordionButtons.forEach(button => {
+                        button.classList.remove('active');
+                    });
+                });
+            }
+
+            // УНІВЕРСАЛЬНИЙ СКРИПТ ДЛЯ ВСІХ АКОРДЕОНІВ
+            const allAccordionButtons = document.querySelectorAll('.accordion-button');
+
+            allAccordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Ця дія буде застосовуватися до КОЖНОЇ кнопки акордеону
+                    button.classList.toggle('active');
+                });
+            });
+            // Таби (оновлена версія для кількох блоків)
+            const tabComponents = document.querySelectorAll('.tabs-component'); // Шукаємо всі компоненти табів по класу
+            
+            tabComponents.forEach(tabContainer => { // Для кожного знайденого компонента робимо налаштування
+                const tabButtons = tabContainer.querySelectorAll('.tab-button');
+                const tabContents = tabContainer.querySelectorAll('.tab-content');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // Ховаємо всі таби ТІЛЬКИ всередині ЦЬОГО компонента
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabContents.forEach(content => content.classList.remove('active'));
+
+                        // Показуємо активний таб
+                        button.classList.add('active');
+                        const tabId = button.dataset.tab;
+                        
+                        // Шукаємо контент ТІЛЬКИ всередині ЦЬОГО компонента
+                        const activeTabContent = tabContainer.querySelector(`#${tabId}`);
+                        if(activeTabContent) {
+                            activeTabContent.classList.add('active');
+                        }
+                    });
+                });
+            });
+
+            // --- НАЧАЛО БЛОКА GEMINI ---
+            const modal = document.getElementById('gemini-modal');
+            const modalContent = document.getElementById('modal-content');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const generatePostBtns = document.querySelectorAll('.generate-post-btn');
+            const loader = document.getElementById('loader');
+            const geminiResult = document.getElementById('gemini-result');
+            const resultTextarea = document.getElementById('result-textarea');
+            const modalFooter = document.getElementById('modal-footer');
+            const copyTextBtn = document.getElementById('copy-text-btn');
+
+            // Справжній URL для вашого Україно мовного проекту
+            const functionUrl = 'https://generatepost-bz3hyxqluq-uc.a.run.app';
+
+            const openModal = () => {
+                if (!modal || !modalContent) return;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                setTimeout(() => modalContent.classList.add('scale-100', 'opacity-100'), 10);
+            };
+
+            const closeModal = () => {
+                if (!modal || !modalContent) return;
+                modalContent.classList.remove('scale-100', 'opacity-100');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                    if(loader) loader.style.display = 'flex';
+                    if(geminiResult) geminiResult.classList.add('hidden');
+                    if(modalFooter) modalFooter.classList.add('hidden');
+                    if(resultTextarea) resultTextarea.value = '';
+                }, 300);
+            };
+
+            if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+            if (modal) modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+
+            generatePostBtns.forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    openModal();
+                    const context = btn.dataset.promptContext;
+                    
+                    try {
+                        const response = await fetch(functionUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ context: context })
+                        });
+                        
+                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+                        const result = await response.json();
+                        const text = result.text;
+
+                        if(resultTextarea) resultTextarea.value = text;
+                        if(loader) loader.style.display = 'none';
+                        if(geminiResult) geminiResult.classList.remove('hidden');
+                        if(modalFooter) modalFooter.classList.remove('hidden');
+
+                    } catch (error) {
+                        console.error("Error calling Cloud Function:", error);
+                        if(resultTextarea) resultTextarea.value = "На жаль, сталася помилка під час генерації тексту. Спробуйте ще раз пізніше.";
+                        if(loader) loader.style.display = 'none';
+                        if(geminiResult) geminiResult.classList.remove('hidden');
+                        if(modalFooter) modalFooter.classList.add('hidden');
+                    }
+                });
+            });
+
+            if (copyTextBtn) {
+                copyTextBtn.addEventListener('click', () => {
+                    if(resultTextarea) {
+                        resultTextarea.select();
+                        document.execCommand('copy');
+                        copyTextBtn.textContent = 'Скопійовано!';
+                        setTimeout(() => {
+                            copyTextBtn.textContent = 'Копіювати текст';
+                        }, 2000);
+                    }
+                });
+            }
+            // --- КОНЕЦ БЛОКА GEMINI ---
+
+            if (copyTextBtn) {
+                copyTextBtn.addEventListener('click', () => {
+                    if(resultTextarea) {
+                        resultTextarea.select();
+                        document.execCommand('copy');
+                        copyTextBtn.textContent = 'Скопійовано!';
+                        setTimeout(() => {
+                            copyTextBtn.textContent = 'Копіювати текст';
+                        }, 2000);
+                    }
+                });// Обробка форми контактів через AJAX
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Забороняємо стандартну відправку (і переадресацію)
+        
+        const form = e.target;
+        const data = new FormData(form);
+        
+        // Показуємо повідомлення про відправку
+        if(formStatus) {
+            formStatus.innerHTML = 'Відправляємо...';
+            formStatus.className = 'mt-4 text-center font-semibold text-gray-600';
+        }
+
+        fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                // Успіх!
+                if(formStatus) {
+                    formStatus.innerHTML = "Дякуємо! Ваша заявка відправлена.";
+                    formStatus.className = 'mt-4 text-center font-semibold text-green-500';
+                }
+                form.reset(); // Очищуємо поля форми
+            } else {
+                // Помилка!
+                response.json().then(data => {
+                    if (Object.hasOwn(data, 'errors')) {
+                        const errorText = data["errors"].map(error => error["message"]).join(", ");
+                        if(formStatus) formStatus.innerHTML = errorText;
+                    } else {
+                        if(formStatus) formStatus.innerHTML = "На жаль, сталася помилка при відправці.";
+                    }
+                    if(formStatus) formStatus.className = 'mt-4 text-center font-semibold text-red-500';
+                })
+            }
+        }).catch(error => {
+            // Загальна помилка мережі
+            if(formStatus) {
+                formStatus.innerHTML = "На жаль, сталася помилка. Перевірте з'єднання.";
+                formStatus.className = 'mt-4 text-center font-semibold text-red-500';
+            }
+        });
+    });
+}
+            }
+        });
+        // УНІВЕРСАЛЬНИЙ СКРИПТ ДЛЯ ВСІХ ГАЛЕРЕЙ (ВИПРАВЛЕНА ВЕРСІЯ)
+const allGalleryContainers = document.querySelectorAll('.gallery-container');
+
+allGalleryContainers.forEach(galleryContainer => {
+    const slides = galleryContainer.querySelectorAll('.gallery-slide');
+    const dotsContainer = galleryContainer.nextElementSibling;
+
+    if (!dotsContainer || !dotsContainer.classList.contains('gallery-dots')) {
+        return;
+    }
+
+    const dots = dotsContainer.querySelectorAll('.gallery-dot');
+    let currentIndex = 0;
+    let intervalId = null;
+
+    if (slides.length === 0 || dots.length === 0 || slides.length !== dots.length) {
+        console.error('Проблема з галереєю:', galleryContainer.dataset.galleryId);
+        return;
+    }
+
+    function showSlide(index) {
+        if (!slides[index] || !dots[index]) return; // Додаткова перевірка
+        slides.forEach(slide => slide.classList.replace('opacity-100', 'opacity-0'));
+        slides[index].classList.replace('opacity-0', 'opacity-100');
+        
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+        
+        currentIndex = index;
+    }
+
+    function nextSlide() {
+        const newIndex = (currentIndex + 1) % slides.length;
+        showSlide(newIndex);
+    }
+
+    function startAutoplay() {
+        stopAutoplay();
+        intervalId = setInterval(nextSlide, 4000);
+    }
+
+    function stopAutoplay() {
+        clearInterval(intervalId);
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            showSlide(index);
+            stopAutoplay();
+            startAutoplay();
+        });
+    });
+                
+                // Запускаємо автопрокрутку
+                startAutoplay();
+            });
+            // СКРИПТ ДЛЯ ПРОКРУТКИ ТА ВІДКРИТТЯ АКОРДЕОНІВ ГОТЕЛІВ
+            const hotelLinks = document.querySelectorAll('.internal-hotel-link');
+
+            hotelLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault(); // Зупиняємо стандартний "стрибок"
+                    
+                    const targetId = this.getAttribute('href'); // Отримуємо id (напр. "#hotel-anandadara")
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Плавно прокручуємо до картки готелю
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                        // Знаходимо кнопку акордеону всередині цієї картки
+                        const accordionButton = targetElement.querySelector('.accordion-button');
+                        
+                        // Відкриваємо акордеон, якщо він закритий
+                        if (accordionButton && !accordionButton.classList.contains('active')) {
+                            // Імітуємо клік, щоб спрацювала анімація
+                            accordionButton.click();
+                        }
+                    }
+                });
+            });
+    </script>
+</body>
+</html>
