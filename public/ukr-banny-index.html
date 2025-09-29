@@ -8,173 +8,151 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="URL" imagesrcset="..." imagesizes="100vw">
-        <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
-        .hero-section {
-            position: relative;
-            overflow: hidden;
-        }
-        #hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -100;
-        }
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0,0,0,0.6);
-            z-index: -50;
-        }
-        /* НОВЫЕ СТИЛИ ДЛЯ АККОРДЕОНА НА CSS GRID */
-    .accordion-content {
-        display: grid;
-        grid-template-rows: 0fr; /* В закрытом состоянии высота строки - 0 */
-        transition: grid-template-rows 0.5s ease-out, padding 0.5s ease-out;
+    <style>
+    body {
+        font-family: 'Montserrat', sans-serif;
     }
-    .accordion-content > div {
-        overflow: hidden; /* Содержимое внутренней обертки будет обрезаться */
+    .hero-section {
+        position: relative;
+        overflow: hidden;
     }
-    .accordion-button.active + .accordion-content {
-        grid-template-rows: 1fr; /* В открытом состоянии - растягиваем до полного размера контента */
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-    }
-        .accordion-button .arrow {
-            transition: transform 0.3s ease-in-out;
-        }
-        .accordion-button.active .arrow {
-            transform: rotate(180deg);
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background-color: #2dd4bf;
-            margin: 1rem auto 0;
-        }
-        .tab-content {
-            display: none;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .tab-button.active {
-            color: #2dd4bf;
-            border-bottom: 3px solid #2dd4bf;
-        }
-        .sticky-parent {
-            position: relative;
-        }
-        .sticky-background {
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            z-index: 10;
-        }
-        .sticky-background video,
-        .sticky-background img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .content-over-sticky {
-            position: relative;
-            z-index: 20;
-        }
-        .text-shadow-strong {
-            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-                                    /* --- СТИЛИ ДЛЯ НОВОЙ ГАЛЕРЕИ --- */
-    .gallery-slide {
-        transition: opacity 0.7s ease-in-out; /* Плавное изменение прозрачности */
-    }
-
-    /* Стиль для активной точки-индикатора */
-    .gallery-dot.active {
-        background-color: #2dd4bf; /* Бирюзовый цвет, как в вашем дизайне */
-        transform: scale(1.25);
-    }
-    /* --- СТИЛИ ДЛЯ СПИСКОВ С ГАЛОЧКАМИ --- */
-    .list-checkmark {
-        list-style-type: none; /* Убираем стандартные точки */
-        padding-left: 0; /* Убираем стандартный отступ списка */
-    }
-
-    .list-checkmark li {
-        position: relative; /* Необходимо для позиционирования галочки */
-        padding-left: 1.75rem; /* Создаем место для галочки (28px) */
-        margin-bottom: 0.5rem; /* Расстояние между пунктами списка */
-    }
-
-    .list-checkmark li::before {
-        content: '✓'; /* Наша новая иконка-галочка */
+    #hero-video {
         position: absolute;
+        top: 0;
         left: 0;
-        top: -2px; /* Немного поднимаем для лучшего визуального центрирования */
-        color: #14b8a6; /* Это цвет, соответствующий вашему bg-teal-500 */
-        font-weight: bold; /* Делаем галочку жирной */
-        font-size: 1.25rem; /* Делаем галочку немного больше текста */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -100;
     }
-    /* --- СТИЛИ ДЛЯ НОВОГО МОБИЛЬНОГО МЕНЮ --- */
-    body.menu-open {
-        overflow: hidden; /* Запрещаем прокрутку страницы, когда меню открыто */
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.6);
+        z-index: -50;
     }
+    /* НОВІ СТИЛІ ДЛЯ АКОРДЕОНУ НА CSS GRID */
+.accordion-content {
+    display: grid;
+    grid-template-rows: 0fr; /* У закритому стані висота рядка - 0 */
+    transition: grid-template-rows 0.5s ease-out, padding 0.5s ease-out;
+}
+.accordion-content > div {
+    overflow: hidden; /* Вміст внутрішньої обгортки буде обрізатися */
+}
+.accordion-button.active + .accordion-content {
+    grid-template-rows: 1fr; /* У відкритому стані - розтягуємо до повного розміру контенту */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+    .accordion-button .arrow {
+        transition: transform 0.3s ease-in-out;
+    }
+    .accordion-button.active .arrow {
+        transform: rotate(180deg);
+    }
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 3px;
+        background-color: #2dd4bf;
+        margin: 1rem auto 0;
+    }
+    .tab-content {
+        display: none;
+    }
+    .tab-content.active {
+        display: block;
+    }
+    .tab-button.active {
+        color: #2dd4bf;
+        border-bottom: 3px solid #2dd4bf;
+    }
+    .sticky-parent {
+        position: relative;
+    }
+    .sticky-background {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        z-index: 10;
+    }
+    .sticky-background video,
+    .sticky-background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .content-over-sticky {
+        position: relative;
+        z-index: 20;
+    }
+    .text-shadow-strong {
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+                        /* --- СТИЛІ ДЛЯ НОВОЇ ГАЛЕРЕЇ --- */
+.gallery-slide {
+    transition: opacity 0.7s ease-in-out; /* Плавна зміна прозорості */
+}
 
-    #mobile-menu-panel {
-        transform: translateX(-100%); /* Прячем меню слева за пределами экрана */
-        transition: transform 0.3s ease-in-out; /* Анимация выезда */
-    }
+/* Стиль для активної точки-індикатора */
+.gallery-dot.active {
+    background-color: #2dd4bf; /* Бірюзовий колір, як у вашому дизайні */
+    transform: scale(1.25);
+}
+/* --- СТИЛІ ДЛЯ СПИСКІВ З ГАЛОЧКАМИ --- */
+.list-checkmark {
+    list-style-type: none; /* Прибираємо стандартні точки */
+    padding-left: 0; /* Прибираємо стандартний відступ списку */
+}
 
-    #mobile-menu-overlay {
-        opacity: 0; /* Делаем фон невидимым */
-        transition: opacity 0.3s ease-in-out; /* Анимация появления */
-    }
+.list-checkmark li {
+    position: relative; /* Необхідно для позиціонування галочки */
+    padding-left: 1.75rem; /* Створюємо місце для галочки (28px) */
+    margin-bottom: 0.5rem; /* Відстань між пунктами списку */
+}
 
-    /* Стили для ОТКРЫТОГО состояния */
-    body.menu-open #mobile-menu-container {
-        display: block; /* Делаем контейнер видимым */
-    }
+.list-checkmark li::before {
+    content: '✓'; /* Наша нова іконка-галочка */
+    position: absolute;
+    left: 0;
+    top: -2px; /* Трохи піднімаємо для кращого візуального центрування */
+    color: #14b8a6; /* Це колір, що відповідає вашому bg-teal-500 */
+    font-weight: bold; /* Робимо галочку жирною */
+    font-size: 1.25rem; /* Робимо галочку трохи більшою за текст */
+}
+/* --- СТИЛІ ДЛЯ НОВОГО МОБІЛЬНОГО МЕНЮ --- */
+body.menu-open {
+    overflow: hidden; /* Забороняємо прокрутку сторінки, коли меню відкрите */
+}
 
-    body.menu-open #mobile-menu-panel {
-        transform: translateX(0); /* Возвращаем меню на экран */
-    }
+#mobile-menu-panel {
+    transform: translateX(-100%); /* Ховаємо меню зліва за межами екрану */
+    transition: transform 0.3s ease-in-out; /* Анімація виїзду */
+}
 
-    body.menu-open #mobile-menu-overlay {
-        opacity: 1; /* Делаем фон видимым */
-    }
-            /* Скрываем видео на экранах шириной 768px и меньше */
-            @media (max-width: 768px) {
-              #hero-video {
-                display: none; /* Прячем элемент видео */
-              }
-              .hero-section {
-                  background-image: url('https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Poster_Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent-poster@1024.jpg');
-                  background-size: cover;
-                  background-position: center;
-              }
-              @media (min-width: 1440px) {
-                  .hero-section {
-                      background-image: url('https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Poster_Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent-poster@1920.jpg');
-                  }
-              }
-              @media (max-width: 768px) {
-                  .hero-section {
-                      background-image: url('https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Poster_Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent-poster@768.jpg');
-                  }
-              }
+#mobile-menu-overlay {
+    opacity: 0; /* Робимо фон невидимим */
+    transition: opacity 0.3s ease-in-out; /* Анімація появи */
+}
 
-    </style>
+/* Стилі для ВІДКРИТОГО стану */
+body.menu-open #mobile-menu-container {
+    display: block; /* Робимо контейнер видимим */
+}
+
+body.menu-open #mobile-menu-panel {
+    transform: translateX(0); /* Повертаємо меню на екран */
+}
+
+body.menu-open #mobile-menu-overlay {
+    opacity: 1; /* Робимо фон видимим */
+}
+</style>
 </head>
 <body class="bg-black text-gray-800">
     <div id="mobile-menu-container" class="fixed inset-0 z-[100] hidden">
