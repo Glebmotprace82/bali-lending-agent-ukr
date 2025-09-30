@@ -14,27 +14,28 @@
             font-family: 'Montserrat', sans-serif;
         }
             .hero-section {
-                position: relative;
-                overflow: hidden;
+              position: relative;
+              overflow: hidden;
+              min-height: 100vh;
+              background: none !important;
+              display: flex;
+              align-items: center;
+              justify-content: center;
             }
             #hero-video {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                z-index: -100;
+              position: absolute;
+              top: 0; left: 0; width: 100%; height: 100%;
+              object-fit: cover;
+              z-index: -100;
+              display: block;
             }
             .hero-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background-color: rgba(0,0,0,0.6);
-                z-index: -50;
+              position: absolute;
+              top: 0; left: 0; right: 0; bottom: 0;
+              background-color: rgba(0,0,0,0.6);
+              z-index: -50;
             }
+
 
             /* НОВІ СТИЛІ ДЛЯ АКОРДЕОНА НА CSS GRID */
     .accordion-content {
@@ -154,29 +155,6 @@
     body.menu-open #mobile-menu-overlay {
         opacity: 1; /* Робимо фон видимим*/
     }
-            /* Приховуємо відео на екранах шириною 768px і менше*/
-            @media (max-width: 768px) {
-              #hero-video {
-                display: none; /*Приховуємо елемент відео*/
-              }
-              .hero-section {
-                  background-image: url('https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Poster_Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent-poster@1024.jpg');
-                  background-size: cover;
-                  background-position: center;
-              }
-            }  /* Закрытие медиа для max-width:768px */
-
-            @media (min-width: 1440px) {
-                .hero-section {
-                    background-image: url('https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Poster_Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent-poster@1920.jpg');
-                }
-            }
-
-            @media (max-width: 768px) {
-                .hero-section {
-                    background-image: url('https://baliguideagent-cdn.b-cdn.net/Presentation_Agent_Bunny/Poster_Video/bali-tegalalang-rice-terraces-drone-video-baliguideagent-poster@768.jpg');
-                }
-            }
         </style>  /* Правильний закриваючий тег, без зайвих рядків */
     </head>
 <body class="bg-black text-gray-800">
